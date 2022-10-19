@@ -1,0 +1,17 @@
+.logo {
+  background-color: #3ddc84;
+  height: 38px;
+  width: 38px;
+  background-image: url("../../images/header-logo.svg");
+}
+
+.logo:hover {
+  opacity: 80%;
+  cursor: pointer;
+}
+
+@media (max-width: 420px) {
+  .logo {
+    margin: 0 auto 0;
+  }
+}

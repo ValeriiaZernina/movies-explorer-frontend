@@ -1,0 +1,17 @@
+.blocks {
+  --sidepad: 70px;
+  width: calc(100% - 2 * var(--sidepad));
+  padding: 0 var(--sidepad);
+}
+
+.blocks__title {
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 27px;
+}
+
+.blocks__item {
+  display: flex;
+  flex-direction: column;
+}

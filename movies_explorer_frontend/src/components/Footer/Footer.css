@@ -1,0 +1,11 @@
+.footer {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  color: #202020;
+  max-width: 1280px;
+  width: 100%;
+}
+.footer__subtitle {
+  width: 100%;
+  text-align: center;
+  color: #8b8b8b;
+}
