@@ -1,4 +1,4 @@
-import "../AboutProjectList.css";
+import "./AboutProjectList.css";
 
 function AboutProjectList({ title, text }) {
   return (
