@@ -1,8 +1,11 @@
 .logo {
-  background-color: #3ddc84;
+  margin-left: 70px;
+  margin-top: 18px;
+  padding: 8px;
   height: 38px;
   width: 38px;
-  background-image: url("../../images/logotype.svg");
+  background-color: transparent;
+  transition: 0.3s;
 }
 
 .logo:hover {

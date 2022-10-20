@@ -18,6 +18,18 @@
   color: #ffffff;
 }
 
+.promo__instruction {
+  padding-top: 36px;
+  margin: 50px 70px 0;
+  max-width: 310px;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+  color: #ffffff;
+  mix-blend-mode: normal;
+  opacity: 0.5;
+}
+
 .promo__logo {
   align-self: flex-end;
   margin: 103px 70px 60px 0;
