@@ -1,9 +1,24 @@
 .promo {
   font-family: "Inter", Arial, Helvetica, sans-serif;
+  width: 100%;
+  background-color: #073042;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  overflow: hidden;
 }
 .promo__title {
-  text-align: center;
+  padding: 0;
+  max-width: 640px;
+  margin: 50px 70px 0;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 58px;
+  color: #ffffff;
+}
+
+.promo__logo {
+  align-self: flex-end;
+  margin: 103px 70px 60px 0;
 }
