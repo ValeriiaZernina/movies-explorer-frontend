@@ -1,7 +1,12 @@
 .promo {
   font-family: "Inter", Arial, Helvetica, sans-serif;
   width: 100%;
+  height: 574px;
   background-color: #073042;
+  background-image: url("../../../images/promo-logo.svg");
+  background-repeat: no-repeat;
+  background-position: 90% 20%;
+  background-size: 310px 304px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
