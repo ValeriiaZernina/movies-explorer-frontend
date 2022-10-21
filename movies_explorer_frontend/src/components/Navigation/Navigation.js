@@ -6,14 +6,14 @@ function Navigation({ isLoggedIn }) {
   return (
     <>
       {!isLoggedIn ? (
-        <>
+        <nav className="navigation__sign">
           <Link to="/signup" className="navigation__link" text="Регистрация">
             Регистрация
           </Link>
           <Link to="/signin" className="navigation__btn" text="Войти">
             Войти
           </Link>
-        </>
+        </nav>
       ) : windowInnerWidth <= 891 ? (
         <button type="button" className="navigation__menu-burger"></button>
       ) : (

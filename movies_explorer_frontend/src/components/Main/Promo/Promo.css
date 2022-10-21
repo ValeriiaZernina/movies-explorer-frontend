@@ -1,7 +1,7 @@
 .promo {
   font-family: "Inter", Arial, Helvetica, sans-serif;
   width: 100%;
-  height: 574px;
+  min-height: 524px;
   background-color: #073042;
   background-image: url("../../../images/promo-logo.svg");
   background-repeat: no-repeat;
@@ -38,4 +38,24 @@
 .promo__logo {
   align-self: flex-end;
   margin: 103px 70px 60px 0;
+}
+
+.promo__link {
+  font-family: "Inter", "Arial", serif;
+  transition: 0.3s;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #ffffff;
+  padding: 10px 20px;
+  margin: 146px 70px 75px;
+  border-radius: 3px;
+  color: #ffffff;
+}
+.promo__link:hover {
+  cursor: pointer;
+  opacity: 60%;
 }

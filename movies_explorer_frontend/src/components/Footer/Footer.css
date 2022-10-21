@@ -4,8 +4,21 @@
   max-width: 1280px;
   width: 100%;
 }
+
 .footer__subtitle {
   width: 100%;
   text-align: center;
   color: #8b8b8b;
+}
+
+.footer__bot {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+  width: 100%;
+}
+
+.footer__copyright {
+  margin: 0;
+  padding: 0;
 }

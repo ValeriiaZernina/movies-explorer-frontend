@@ -32,7 +32,6 @@ function App() {
           <Route path="/signup" element={<Login />}></Route>
           <Route path="/*" element={<PageNotFound />}></Route> */}
       </Routes>
-      <Footer></Footer>
     </div>
   );
 }
