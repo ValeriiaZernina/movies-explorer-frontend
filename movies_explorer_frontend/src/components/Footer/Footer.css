@@ -1,13 +1,23 @@
 .footer {
-  font-family: "Inter", Arial, Helvetica, sans-serif;
-  color: #202020;
+  font-family: "Inter", "Arial", serif;
+  background-color: #202020;
   max-width: 1280px;
   width: 100%;
+  margin: auto auto 0;
+  --sidepad: 70px;
+  width: calc(100% - 2 * var(--sidepad));
+  padding: 0 var(--sidepad);
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
 }
 
 .footer__subtitle {
   width: 100%;
+  margin: 0;
+  padding: 78px 0 20px;
   text-align: center;
+  border-bottom: 1px solid #424242;
   color: #8b8b8b;
 }
 
@@ -21,4 +31,28 @@
 .footer__copyright {
   margin: 0;
   padding: 0;
+  color: #ffffff;
+}
+
+.footer__links {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.footer__links-item {
+  margin-left: 20px;
+}
+
+.footer__link {
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+  color: #ffffff;
+}
+
+.footer__link:hover {
+  opacity: 0.6;
+  cursor: pointer;
 }

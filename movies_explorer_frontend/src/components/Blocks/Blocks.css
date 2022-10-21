@@ -6,12 +6,24 @@
 
 .blocks__title {
   color: #ffffff;
+  margin: 100px 0 8px;
+  padding: 0 0 20px;
   font-weight: 400;
   font-size: 22px;
   line-height: 27px;
+  letter-spacing: -0.04em;
+  border-bottom: 1px solid #dadada;
 }
 
 .blocks__item {
   display: flex;
   flex-direction: column;
+}
+
+.blocks_style_grey {
+  background-color: #272727;
+}
+
+.blocks__title_style_gray {
+  border-bottom: 1px solid #dadada;
 }

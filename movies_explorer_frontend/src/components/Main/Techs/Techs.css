@@ -1,0 +1,45 @@
+.techs__title {
+  padding: 0;
+  margin: 90px 0 25px;
+  font-family: "Inter", "Arial", serif;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 58px;
+  text-align: center;
+  letter-spacing: -0.04em;
+  color: #ffffff;
+}
+
+.techs__info {
+  max-width: 460px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: -0.04em;
+  margin: 0 auto 100px;
+}
+
+.techs__list {
+  width: 100%;
+  padding: 0;
+  margin-bottom: 100px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 90px);
+  justify-content: center;
+  gap: 10px;
+  list-style: none;
+}
+
+.techs__item {
+  width: 100%;
+  margin: 0;
+  padding: 22px 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  letter-spacing: -0.04em;
+  background-color: #303030;
+  border-radius: 10px;
+}
