@@ -1,0 +1,15 @@
+.portfolio__list {
+  padding: 0 0 106px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+
+.portfolio__list-item {
+  border-bottom: 1px solid #424242;
+}
+
+.portfolio__list-item:last-of-type {
+  border-bottom: none;
+}

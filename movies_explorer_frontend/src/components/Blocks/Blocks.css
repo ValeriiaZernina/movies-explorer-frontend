@@ -27,3 +27,10 @@
 .blocks__title_style_gray {
   border-bottom: 1px solid #dadada;
 }
+
+.blocks__title_style_light {
+  color: #8b8b8b;
+  border-bottom: none;
+  font-size: 18px;
+  line-height: 20px;
+}
