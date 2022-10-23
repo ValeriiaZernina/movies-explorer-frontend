@@ -22,6 +22,7 @@ function Auth({ formType }) {
             type="text"
             value="Виталий"
             label="Имя"
+            required
           ></InputValidation>
         )}
         <InputValidation
@@ -30,6 +31,7 @@ function Auth({ formType }) {
           type="email"
           value="pochta@yandex.ru"
           label="E-mail"
+          required
         ></InputValidation>
         <InputValidation
           type="password"
@@ -37,14 +39,24 @@ function Auth({ formType }) {
           type="password"
           value="xxx"
           label="Password"
+          required
         ></InputValidation>
 
         <button className="auth__btn" type="submit">
           {formType === "login" ? "Войти" : "Зарегистрироваться"}
         </button>
-        <div>
-          <h3></h3>
-          <Link></Link>
+        <div className="auth__signin-box">
+          <h3 className="auth__question">
+            {formType === "login"
+              ? "Еще не зарегистрированы?"
+              : "Уже зарегистрированы?"}
+          </h3>
+          <Link
+            className="auth__link"
+            to={formType === "login" ? "/signup" : "/signin"}
+          >
+            {formType === "login" ? "Регистрация" : "Войти"}
+          </Link>
         </div>
       </form>
     </main>

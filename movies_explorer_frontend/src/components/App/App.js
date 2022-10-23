@@ -7,9 +7,8 @@ import Footer from "../Footer/Footer";
 // import Movies from "../Movies/Movies";
 // import SavedMovies from "../SavedMovies/SavedMovies";
 import Auth from "../Auth/Auth";
-// import Login from "../Login/Login";
-// import Profile from "../Profile/Profile";
-// import PageNotFound from "../PageNotFound/PageNotFound";
+import Profile from "../Profile/Profile";
+import PageNotFound from "../PageNotFound/PageNotFound";
 
 function App() {
   return (
@@ -36,8 +35,14 @@ function App() {
             </>
           }
         ></Route>
-        {/* <Route path="/signin" element={<><Auth formType="login"></Auth>
-        </>}></Route> */}
+        <Route
+          path="/signin"
+          element={
+            <>
+              <Auth formType="login"></Auth>
+            </>
+          }
+        ></Route>
         <Route
           path="/signup"
           element={
@@ -46,7 +51,7 @@ function App() {
             </>
           }
         ></Route>
-        {/* <Route path="/*" element={<PageNotFound />}></Route> */}
+        <Route path="/*" element={<PageNotFound></PageNotFound>}></Route>
       </Routes>
     </div>
   );
