@@ -6,7 +6,7 @@ import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
 // import Movies from "../Movies/Movies";
 // import SavedMovies from "../SavedMovies/SavedMovies";
-// import Register from "../Register/Register";
+import Auth from "../Auth/Auth";
 // import Login from "../Login/Login";
 // import Profile from "../Profile/Profile";
 // import PageNotFound from "../PageNotFound/PageNotFound";
@@ -26,11 +26,27 @@ function App() {
           }
         ></Route>
         {/* <Route path="/movies" element={<Movies />}></Route>
-          <Route path="/saved-movies" element={<SavedMovies />}></Route>
-          <Route path="/profile" element={<Profile />}></Route>
-          <Route path="/signin" element={<Register />}></Route>
-          <Route path="/signup" element={<Login />}></Route>
-          <Route path="/*" element={<PageNotFound />}></Route> */}
+          <Route path="/saved-movies" element={<SavedMovies />}></Route> */}
+        <Route
+          path="/profile"
+          element={
+            <>
+              <Header></Header>
+              <Profile></Profile>
+            </>
+          }
+        ></Route>
+        {/* <Route path="/signin" element={<><Auth formType="login"></Auth>
+        </>}></Route> */}
+        <Route
+          path="/signup"
+          element={
+            <>
+              <Auth formType="register"></Auth>
+            </>
+          }
+        ></Route>
+        {/* <Route path="/*" element={<PageNotFound />}></Route> */}
       </Routes>
     </div>
   );

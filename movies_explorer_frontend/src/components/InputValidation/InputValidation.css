@@ -1,0 +1,33 @@
+.input__section {
+}
+
+.input__section_style_register {
+}
+
+.input__section_style_login {
+}
+
+.input__label {
+}
+
+.input__label_style_register {
+}
+
+.input {
+}
+
+.input__error {
+}
+
+.input__error_style_ {
+}
+
+.input__error {
+  visibility: hidden;
+  overflow: hidden;
+  color: #ee3465;
+}
+
+.input__error_visible {
+  visibility: visible;
+}
