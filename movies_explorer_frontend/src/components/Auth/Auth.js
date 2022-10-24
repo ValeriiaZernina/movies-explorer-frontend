@@ -8,7 +8,7 @@ function Auth({ formType }) {
     e.preventDefault();
   }
   return (
-    <main className="Auth">
+    <main className="auth">
       <Logo></Logo>
       <form className="auth__form" onSubmit={handleSubmit}>
         <h2 className="auth__title">

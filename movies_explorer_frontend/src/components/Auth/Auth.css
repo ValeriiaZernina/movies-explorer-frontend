@@ -1,0 +1,48 @@
+.auth {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth__form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.auth__title {
+  padding: 0;
+  margin: 35px 0 40px;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+}
+
+.auth__btn {
+  background-color: #4285f4;
+  border-radius: 3px;
+  border: none;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #ffffff;
+}
+
+.auth__signin-box {
+  display: flex;
+  justify-content: center;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.auth__question {
+  color: #8b8b8b;
+  margin: 0;
+  padding: 3px;
+}
+
+.auth__link {
+  padding: 3px;
+  text-decoration: none;
+  color: #4285f4;
+}
