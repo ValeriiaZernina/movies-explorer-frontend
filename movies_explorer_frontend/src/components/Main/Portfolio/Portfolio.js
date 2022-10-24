@@ -20,7 +20,7 @@ function Portfolio() {
         </li>
         <li className="portfolio__list-item">
           <PortfolioLinks
-            href="https://zernina.students.nomoredomains.sbs"
+            href="https://github.com/ValeriiaZernina/react-mesto-api-full"
             name="Одностраничное приложение"
           ></PortfolioLinks>
         </li>

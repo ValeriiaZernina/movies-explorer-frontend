@@ -9,25 +9,45 @@
   border-bottom: none;
 }
 
-.input__section_style_register {
-}
-
-.input__section_style_login {
+.input__section_style_auth {
+  margin-top: 0;
+  padding-bottom: 0;
+  border-bottom: none;
 }
 
 .input__label {
 }
 
-.input__label_style_register {
+.input__label_style_auth {
+  flex-direction: column;
+  justify-content: flex-start;
+  color: #8b8b8b;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+}
+
+.input__label_style_profile {
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 13px;
 }
 
 .input {
+  margin: 0;
+  padding: 0;
+  background-color: inherit;
+  color: #ffffff;
+  border: none;
 }
 
 .input__error {
 }
 
-.input__error_style_ {
+.input__error_style_auth {
+}
+
+.input__error_style_profile {
 }
 
 .input__error {

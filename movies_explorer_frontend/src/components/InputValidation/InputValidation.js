@@ -14,12 +14,12 @@ function InputValidation({ inputStyle, label, ...props }) {
           id={props.id}
           name={props.id}
           className={`input input_style_${inputStyle}`}
-          onInput={handleInput}
           {...props}
+          onInput={handleInput}
         ></input>
       </label>
       <span
-        className={`input__error  input__error_style_${inputStyle}`}
+        className={`input__error input__error_style_${inputStyle}`}
         id={`${props.id}-error`}
       >
         Вывод ошибки

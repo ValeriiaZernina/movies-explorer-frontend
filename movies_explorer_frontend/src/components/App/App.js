@@ -51,7 +51,7 @@ function App() {
             </>
           }
         ></Route>
-        <Route path="/*" element={<PageNotFound></PageNotFound>}></Route>
+        <Route path="/signout" element={<PageNotFound></PageNotFound>}></Route>
       </Routes>
     </div>
   );

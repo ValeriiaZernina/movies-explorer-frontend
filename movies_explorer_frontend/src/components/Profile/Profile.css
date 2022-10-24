@@ -1,0 +1,38 @@
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.profile__form {
+  width: calc(100% - 60px);
+  height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 410px;
+  min-height: 300px;
+}
+
+.profile__tittle {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+}
+
+.profile__btn {
+  padding: 6px;
+  background-color: inherit;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+  border: none;
+  color: #ffffff;
+  border-radius: 5px;
+}
+
+.profile__signout {
+  text-decoration-line: none;
+  color: #ee3465;
+}
