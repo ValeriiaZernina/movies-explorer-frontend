@@ -1,6 +1,9 @@
 .auth {
   display: flex;
   flex-direction: column;
+  max-width: 396px;
+  height: 560px;
+  margin: 70px auto 0;
 }
 
 .auth__form {
@@ -18,6 +21,9 @@
 }
 
 .auth__btn {
+  width: 100%;
+  padding: 14px 0;
+  margin: auto 0 13px;
   background-color: #4285f4;
   border-radius: 3px;
   border: none;
@@ -25,6 +31,10 @@
   font-size: 14px;
   line-height: 17px;
   color: #ffffff;
+}
+
+.auth__btn:hover {
+  cursor: pointer;
 }
 
 .auth__signin-box {
@@ -39,6 +49,9 @@
   color: #8b8b8b;
   margin: 0;
   padding: 3px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
 }
 
 .auth__link {

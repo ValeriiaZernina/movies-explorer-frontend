@@ -16,6 +16,11 @@
 }
 
 .input__label {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
 }
 
 .input__label_style_auth {
@@ -41,19 +46,41 @@
   border: none;
 }
 
-.input__error {
+.input_style_auth {
+  border-radius: 8px;
+  background-color: #2f2f2f;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+  margin: 10px 0 10px;
 }
 
-.input__error_style_auth {
-}
-
-.input__error_style_profile {
+.input_style_profile {
+  width: calc (100%-70px);
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 13px;
+  text-align: right;
 }
 
 .input__error {
   visibility: hidden;
   overflow: hidden;
   color: #ee3465;
+}
+
+.input__error_style_auth {
+  font-weight: 400;
+  text-align: left;
+  font-size: 10px;
+  line-height: 12px;
+}
+
+.input__error_style_profile {
+  font-weight: 400;
+  text-align: right;
+  font-size: 10px;
+  line-height: 12px;
 }
 
 .input__error_visible {

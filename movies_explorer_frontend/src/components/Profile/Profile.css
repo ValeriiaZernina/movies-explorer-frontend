@@ -32,6 +32,10 @@
   border-radius: 5px;
 }
 
+.profile__btn:hover {
+  cursor: pointer;
+}
+
 .profile__signout {
   text-decoration-line: none;
   color: #ee3465;
