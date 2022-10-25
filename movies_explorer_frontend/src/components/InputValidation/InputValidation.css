@@ -16,11 +16,12 @@
 }
 
 .input__label {
+  margin: 0;
+  padding: 0;
+  width: 396px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 0;
-  padding: 0;
 }
 
 .input__label_style_auth {
@@ -53,6 +54,7 @@
   font-size: 13px;
   line-height: 16px;
   margin: 10px 0 10px;
+  padding: 17px 0;
 }
 
 .input_style_profile {

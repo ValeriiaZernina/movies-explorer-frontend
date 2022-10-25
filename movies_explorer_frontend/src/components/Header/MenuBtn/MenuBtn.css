@@ -1,0 +1,32 @@
+.menuBtn {
+  width: 44px;
+  height: 44px;
+  position: relative;
+}
+
+.menuBtn::before {
+  content: "";
+  width: 28px;
+  height: 17px;
+  border: 0px;
+  border-bottom: solid 3px white;
+  border-top: solid 3px white;
+  background-color: transparent;
+  position: absolute;
+  top: 11px;
+  left: 8px;
+}
+
+.menuBtn::after {
+  content: "";
+  width: 28px;
+  height: 0px;
+  border-top: solid 3px white;
+  position: absolute;
+  top: 21px;
+  left: 8px;
+}
+
+.menuBtn:hover {
+  cursor: pointer;
+}

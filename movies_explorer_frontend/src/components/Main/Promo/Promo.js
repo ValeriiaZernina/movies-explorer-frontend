@@ -1,5 +1,4 @@
 import "./Promo.css";
-import { Link } from "react-router-dom";
 // import promoLogotype from "../../../images/promo-logo.svg";
 
 // Слайд там где изображение карты
@@ -12,7 +11,9 @@ function Promo() {
       <p className="promo__instruction">
         Листайте ниже, чтобы узнать больше про этот проект и его создателя.
       </p>
-      <Link className="promo__link">Узнать больше</Link>
+      <button className="promo__btn" type="button">
+        Узнать больше
+      </button>
       {/* <img className="promo__logo" src={promoLogotype} alt="Веб Логотип"></img> */}
     </section>
   );

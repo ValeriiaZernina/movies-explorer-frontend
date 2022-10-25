@@ -40,7 +40,7 @@
   margin: 103px 70px 60px 0;
 }
 
-.promo__link {
+.promo__btn {
   font-family: "Inter", "Arial", serif;
   transition: 0.3s;
   text-decoration: none;
@@ -49,13 +49,14 @@
   line-height: 16px;
   display: flex;
   align-items: center;
+  background-color: #073042;
   border: 1px solid #ffffff;
   padding: 10px 20px;
   margin: 146px 70px 75px;
   border-radius: 3px;
   color: #ffffff;
 }
-.promo__link:hover {
+.promo__btn:hover {
   cursor: pointer;
   opacity: 60%;
 }

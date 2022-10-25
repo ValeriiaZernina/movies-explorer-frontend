@@ -54,7 +54,7 @@
 }
 
 .about-me__github:hover {
-  opacity: 0.6;
+  opacity: 60%;
   cursor: pointer;
 }
 
