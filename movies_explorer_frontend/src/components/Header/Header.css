@@ -3,10 +3,10 @@
   justify-content: space-between;
   --sidepad: 70px;
   width: calc(100% - 2 * var(--sidepad));
-  padding: 15px var(--sidepad);
+  padding: 17px var(--sidepad);
   font-weight: 500;
   font-size: 12px;
-  line-height: 1.33;
+  line-height: 16px;
   background-color: #073042;
 }
 
@@ -14,7 +14,7 @@
   width: 100%;
   display: flex;
   justify-content: flex-end;
-  padding: 6px 0;
+  padding: 10px 3px;
 }
 
 .header__nav-movies_style_row {

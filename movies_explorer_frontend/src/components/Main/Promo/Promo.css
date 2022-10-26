@@ -5,7 +5,7 @@
   background-color: #073042;
   background-image: url("../../../images/promo-logo.svg");
   background-repeat: no-repeat;
-  background-position: 90% 20%;
+  background-position: 92% 26%;
   background-size: 310px 304px;
   display: flex;
   flex-direction: column;
@@ -16,7 +16,7 @@
 .promo__title {
   padding: 0;
   max-width: 640px;
-  margin: 50px 70px 0;
+  margin: 70px 70px 0;
   font-weight: 400;
   font-size: 50px;
   line-height: 58px;
@@ -24,8 +24,7 @@
 }
 
 .promo__instruction {
-  padding-top: 36px;
-  margin: 50px 70px 0;
+  margin: 36px 70px 0;
   max-width: 310px;
   font-weight: 400;
   font-size: 13px;
@@ -51,8 +50,8 @@
   align-items: center;
   background-color: #073042;
   border: 1px solid #ffffff;
-  padding: 10px 20px;
-  margin: 146px 70px 75px;
+  padding: 9px 18px;
+  margin: 145px 70px 75px;
   border-radius: 3px;
   color: #ffffff;
 }
