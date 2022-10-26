@@ -28,7 +28,6 @@ function Auth({ formType }) {
         <InputValidation
           type="email"
           inputStyle="auth"
-          type="email"
           value="pochta@yandex.ru"
           label="E-mail"
           required
@@ -36,9 +35,8 @@ function Auth({ formType }) {
         <InputValidation
           type="password"
           inputStyle="auth"
-          type="password"
           value="xxx"
-          label="Password"
+          label="Пароль"
           required
         ></InputValidation>
 

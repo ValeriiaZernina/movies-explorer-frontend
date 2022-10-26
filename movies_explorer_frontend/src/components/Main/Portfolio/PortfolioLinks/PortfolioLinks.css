@@ -17,8 +17,8 @@
 }
 
 .portfolio-link__image {
-  position: relative;
-  margin-top: 15px;
+  object-fit: contain;
+  margin: 20px 7px 0;
   width: 18px;
   height: 18px;
 }

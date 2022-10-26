@@ -25,6 +25,7 @@ function Profile() {
           value="pochta@yandex.ru"
           required
         ></InputValidation>
+
         <button className="profile__btn" type="submit">
           Редактировать
         </button>

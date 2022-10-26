@@ -40,7 +40,7 @@
 }
 
 .promo__btn {
-  font-family: "Inter", "Arial", serif;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
   transition: 0.3s;
   text-decoration: none;
   font-weight: 500;

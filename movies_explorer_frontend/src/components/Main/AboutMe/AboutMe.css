@@ -25,6 +25,7 @@
 .about-me__short {
   grid-area: short;
   padding: 0;
+  margin: 0;
   font-weight: 500;
   font-size: 18px;
   line-height: 20px;
@@ -34,7 +35,7 @@
 .about-me__info {
   grid-area: info;
   padding: 0;
-  margin: 0;
+  margin-top: 10px;
   font-weight: 400;
   font-size: 14px;
   line-height: 22px;

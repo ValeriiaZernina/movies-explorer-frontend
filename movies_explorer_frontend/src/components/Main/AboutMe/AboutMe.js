@@ -4,7 +4,7 @@ import avatar from "../../../images/foto.svg";
 
 function AboutMe() {
   return (
-    <Blocks name="Студент">
+    <Blocks blocksStyle="black" name="Студент">
       <section className="about-me__section">
         <h3 className="about-me__name">Виталий</h3>
         <p className="about-me__short">Фронтенд-разработчик, 39 лет</p>

@@ -4,7 +4,7 @@ import "./AboutProject.css";
 
 function AboutProject() {
   return (
-    <Blocks name="О проекте">
+    <Blocks blocksStyle="black" name="О проекте">
       <div className="about-project__description">
         <AboutProjectList
           title="Дипломный проект включал 5 этапов"

@@ -47,7 +47,11 @@ function Header() {
   }
 
   return (
-    <header className={`header ${location.pathname === "/" ? "header" : ""}`}>
+    <header
+      className={`header ${
+        location.pathname === "/" ? "header_style_black" : ""
+      }`}
+    >
       <Logo></Logo>
       {location.pathname === "/" ? (
         <nav className="header__sign">
@@ -60,12 +64,18 @@ function Header() {
         </nav>
       ) : isWide ? (
         <nav className="header__nav-movies_style_row">
-          <MenuLink to="/movies" subtitle="Фильмы" linkType="row"></MenuLink>
-          <MenuLink
-            to="/saved-movies"
-            subtitle="Сохранённые фильмы"
-            linkType="row"
-          ></MenuLink>
+          <div>
+            <MenuLink
+              to="/movies"
+              subtitle="Фильмы"
+              linkType="movies"
+            ></MenuLink>
+            <MenuLink
+              to="/saved-movies"
+              subtitle="Сохранённые фильмы"
+              linkType="saved"
+            ></MenuLink>
+          </div>
           <ProfileLink linkType="row"></ProfileLink>
         </nav>
       ) : (

@@ -36,10 +36,19 @@
   margin-bottom: 16px;
 }
 
-.menu-link_highlighted {
-  background-color: #3ddc84;
-  color: black;
-  -webkit-text-stroke: 1px #202020;
+.menu-link_style_movies {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+  text-align: right;
+}
+
+.menu-link_style_saved {
+  padding-left: 16px;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+  text-align: right;
 }
 
 .menu-link_style_row_activated {

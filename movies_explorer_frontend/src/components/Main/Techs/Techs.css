@@ -1,7 +1,7 @@
 .techs__title {
   padding: 0;
-  margin: 75px 0 25px;
-  font-family: "Inter", "Arial", serif;
+  margin: 85px 0 25px;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 50px;
   line-height: 58px;
@@ -17,7 +17,7 @@
   line-height: 20px;
   text-align: center;
   letter-spacing: -0.04em;
-  margin: 0 auto 100px;
+  margin: 0 auto 82px;
 }
 
 .techs__list {

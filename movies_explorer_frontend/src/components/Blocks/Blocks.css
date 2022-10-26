@@ -6,7 +6,7 @@
 
 .blocks__title {
   color: #ffffff;
-  margin: 110px 0 8px;
+  margin: 100px 0 8px;
   padding: 0 0 21px;
   font-weight: 400;
   font-size: 22px;
@@ -24,7 +24,12 @@
   background-color: #272727;
 }
 
-.blocks__title_style_gray {
+.blocks_style_black {
+  background-color: #202020;
+  padding-top: 10px;
+}
+
+.blocks__title_style_grey {
   border-bottom: 1px solid #dadada;
 }
 
@@ -33,4 +38,5 @@
   border-bottom: none;
   font-size: 18px;
   line-height: 20px;
+  letter-spacing: -0.04em;
 }

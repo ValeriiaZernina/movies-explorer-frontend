@@ -7,6 +7,9 @@
   font-weight: 500;
   font-size: 12px;
   line-height: 16px;
+}
+
+.header_style_black {
   background-color: #073042;
 }
 
@@ -14,16 +17,16 @@
   width: 100%;
   display: flex;
   justify-content: flex-end;
-  padding: 10px 3px;
+  padding: 10px 0;
 }
 
 .header__nav-movies_style_row {
   width: 100%;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
-  padding-top: 2px;
-  padding-left: 34px;
+  padding-left: 40px;
+  background-color: inherit;
 }
 
 .header__nav-movies_style_column {
