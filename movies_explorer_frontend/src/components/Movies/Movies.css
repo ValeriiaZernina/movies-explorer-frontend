@@ -1,7 +1,8 @@
 .movies {
-  margin-bottom: 80px;
   --sidepad: 70px;
+  margin-bottom: 80px;
   width: calc(100% - 2 * var(--sidepad));
+  padding: 0 var(--sidepad);
   display: flex;
   flex-direction: column;
   align-items: center;

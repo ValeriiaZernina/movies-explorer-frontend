@@ -5,7 +5,7 @@ import Header from "../Header/Header";
 import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
 import Movies from "../Movies/Movies";
-// import SavedMovies from "../SavedMovies/SavedMovies";
+import SavedMovies from "../SavedMovies/SavedMovies";
 import Auth from "../Auth/Auth";
 import Profile from "../Profile/Profile";
 import PageNotFound from "../PageNotFound/PageNotFound";
@@ -26,8 +26,26 @@ function App() {
               </>
             }
           ></Route>
-          <Route path="/movies" element={<Movies />}></Route>
-          {/* <Route path="/saved-movies" element={<SavedMovies />}></Route> */}
+          <Route
+            path="/movies"
+            element={
+              <>
+                <Header></Header>
+                <Movies></Movies>
+                <Footer></Footer>
+              </>
+            }
+          ></Route>
+          <Route
+            path="/saved-movies"
+            element={
+              <>
+                <Header></Header>
+                <SavedMovies></SavedMovies>
+                <Footer></Footer>
+              </>
+            }
+          ></Route>
           <Route
             path="/profile"
             element={
@@ -58,7 +76,6 @@ function App() {
             element={<PageNotFound></PageNotFound>}
           ></Route>
         </Routes>
-        {/* окно  выпадающего меню */}
       </CurrentUserContext.Provider>
     </div>
   );
