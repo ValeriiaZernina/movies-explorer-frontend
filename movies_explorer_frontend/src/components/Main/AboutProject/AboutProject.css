@@ -8,7 +8,7 @@
 
 .about-project__graph {
   width: 100%;
-  margin: 100px 0 105px;
+  margin: 100px 0 95px;
   display: grid;
   grid-template-columns: minmax(100px, 1fr) 4fr;
   justify-items: center;
@@ -39,4 +39,5 @@
   font-weight: 500;
   color: #8b8b8b;
   background: transparent;
+  margin: 5px 0;
 }
