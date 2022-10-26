@@ -2,12 +2,12 @@ import "./Movies.css";
 import SearchForm from "./SearchForm/SearchForm";
 import MoviesCardList from "./MoviesCardList/MoviesCardList";
 
-function Movies(props) {
+function Movies() {
   return (
     <main className="movies">
       <SearchForm></SearchForm>
       <MoviesCardList></MoviesCardList>
-      <button></button>
+      <button className="movies__btn">Ещё</button>
     </main>
   );
 }
