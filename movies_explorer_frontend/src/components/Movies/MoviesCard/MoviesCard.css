@@ -1,0 +1,65 @@
+.moviescard {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 360px;
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.08);
+  border-radius: 6px;
+  background-color: #222222;
+  margin: 32px 0;
+}
+
+.moviescard__pic {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.moviescard__discription {
+  display: flex;
+  justify-content: space-between;
+  margin: 18px;
+}
+
+.moviescard__discription-text {
+  margin: 0;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
+  color: #ffffff;
+}
+
+.moviescard__discription-duration {
+  margin: 0;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+  color: #8b8b8b;
+}
+
+.moviescard__btn-save {
+  content: "Сохранить";
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #313131;
+  border: none;
+  border-radius: 30px;
+  width: 100px;
+  height: 29px;
+  align-self: center;
+  margin: 18px 0;
+}
+
+.moviescard__btn-save_type_delete {
+  background-image: url("../../../images/save_type_delete.svg");
+}
+
+.moviescard__btn-save_type_on {
+  background-image: url("../../../images/save.svg");
+  background-color: #ee3465;
+}
+
+.moviescard__btn-save:hover {
+  cursor: pointer;
+  opacity: 60%;
+}

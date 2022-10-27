@@ -2,24 +2,28 @@ import "./MoviesCard.css";
 import movie from "../../../images/film.svg";
 import { useLocation } from "react-router-dom";
 
-function MoviesCard({ isLiked }) {
-  const isMoviesLocation = useLocation().pathname === "/movies";
+function MoviesCard({ isSaved }) {
+  const isMoviesLocation = useLocation().pathname === "/saved-movies";
   return (
     <div className="moviescard">
+      <div className="moviescard__discription">
+        <h2 className="moviescard__discription-text">В погоне за Бенкси</h2>
+        <div className="moviescard__discription-duration">27 минут</div>
+      </div>
       <img
         className="moviescard__pic"
         src={movie}
-        alt="33 слова о дизайне"
+        alt="В погоне за Бенкси"
       ></img>
-      <div className="moviescard__name">
-        <h2></h2>
-        <button
-          className={`movies-card__butn-like movies-card__button-like_style_${
-            isMoviesLocation ? (isLiked ? "on" : "off") : "delete"
-          }`}
-        ></button>
-      </div>
-      <div className="moviescard__duration"></div>
+      <button
+        type="button"
+        aria-label="Сохранить"
+        className={`${
+          isMoviesLocation
+            ? "moviescard__btn-save_type_delete"
+            : "moviescard__btn-save"
+        } ${isSaved ? "moviescard__btn-save_type_on" : ""}`}
+      ></button>
     </div>
   );
 }
