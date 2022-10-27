@@ -1,12 +1,12 @@
 import "./MoviesCardList.css";
 import MoviesCard from "../MoviesCard/MoviesCard";
 
-function MoviesCardList() {
+function MoviesCardList({ isSaved }) {
   return (
-    <div className="movies-card-list">
-      <MoviesCard></MoviesCard>
-      <MoviesCard isLiked={true}></MoviesCard>
-      <MoviesCard></MoviesCard>
+    <div className="moviescard-list">
+      <MoviesCard buttonText={"Сохранить"}></MoviesCard>
+      <MoviesCard isSaved={true} buttonText={""}></MoviesCard>
+      <MoviesCard buttonText={"Сохранить"}></MoviesCard>
       {/* <MoviesCard></MoviesCard>
       <MoviesCard></MoviesCard>
       <MoviesCard></MoviesCard>

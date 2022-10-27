@@ -1,5 +1,5 @@
 import "./SearchForm.css";
-import Smaller from "../Smaller/Smaller";
+import Checkbox from "../Checkbox/Checkbox";
 
 function SearchForm() {
   function handleSubmit(e) {
@@ -23,10 +23,10 @@ function SearchForm() {
       >
         Найти
       </button>
-      <Smaller
-        className="search-film__smaller"
+      <Checkbox
+        className="search-film__checkbox"
         name="Короткометражки"
-      ></Smaller>
+      ></Checkbox>
     </form>
   );
 }

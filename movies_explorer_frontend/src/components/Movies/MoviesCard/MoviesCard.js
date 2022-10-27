@@ -2,7 +2,7 @@ import "./MoviesCard.css";
 import movie from "../../../images/film.svg";
 import { useLocation } from "react-router-dom";
 
-function MoviesCard({ isSaved }) {
+function MoviesCard({ isSaved, buttonText }) {
   const isMoviesLocation = useLocation().pathname === "/saved-movies";
   return (
     <div className="moviescard">
@@ -16,6 +16,7 @@ function MoviesCard({ isSaved }) {
         alt="В погоне за Бенкси"
       ></img>
       <button
+        value="Сохранить"
         type="button"
         aria-label="Сохранить"
         className={`${
@@ -23,7 +24,9 @@ function MoviesCard({ isSaved }) {
             ? "moviescard__btn-save_type_delete"
             : "moviescard__btn-save"
         } ${isSaved ? "moviescard__btn-save_type_on" : ""}`}
-      ></button>
+      >
+        {buttonText}
+      </button>
     </div>
   );
 }

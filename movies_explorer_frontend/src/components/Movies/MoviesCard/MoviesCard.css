@@ -39,9 +39,11 @@
 
 .moviescard__btn-save {
   content: "Сохранить";
-  background-repeat: no-repeat;
-  background-position: center;
   background-color: #313131;
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 11px;
   border: none;
   border-radius: 30px;
   width: 100px;
@@ -52,11 +54,16 @@
 
 .moviescard__btn-save_type_delete {
   background-image: url("../../../images/save_type_delete.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #313131;
 }
 
 .moviescard__btn-save_type_on {
   background-image: url("../../../images/save.svg");
   background-color: #ee3465;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .moviescard__btn-save:hover {
