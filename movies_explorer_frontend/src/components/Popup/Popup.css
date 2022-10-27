@@ -55,9 +55,6 @@
 .popup__close-button::after {
   transform: rotate(-45deg);
 }
-.popup__close-button:hover {
-  box-shadow: 0 0 10px 4px #3ddc84;
-}
 
 .popup__container {
   position: relative;

@@ -38,7 +38,9 @@
 }
 
 .moviescard__btn-save {
-  content: "Сохранить";
+  background-image: url("../../../images/saved.svg");
+  background-repeat: no-repeat;
+  background-position: center;
   background-color: #313131;
   color: #ffffff;
   font-weight: 400;
@@ -69,4 +71,18 @@
 .moviescard__btn-save:hover {
   cursor: pointer;
   opacity: 60%;
+}
+
+@media (max-width: 1024px) {
+  .moviescard__pic {
+    height: 190px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 420px) {
+  .moviescard__pic {
+    height: 168px;
+    width: 100%;
+  }
 }

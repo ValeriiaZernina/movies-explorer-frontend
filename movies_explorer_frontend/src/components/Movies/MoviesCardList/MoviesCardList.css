@@ -14,7 +14,7 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 420px) {
   .moviescard-list {
     margin-top: 41px;
     row-gap: 33px;

@@ -22,7 +22,7 @@ function Profile() {
           inputStyle="profile"
           type="email"
           label="E-mail"
-          value="pochta@yandex.ru"
+          value="vita@yandex.ru"
           required
         ></InputValidation>
 

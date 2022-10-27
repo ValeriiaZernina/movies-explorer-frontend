@@ -1,7 +1,7 @@
-import "./Popup.css";
 import { useEffect } from "react";
+import "./Popup.css";
 
-function Popup({ isOpen, text, onClose, children }) {
+function Popup({ isOpen, name, onClose, children }) {
   useEffect(() => {
     if (!isOpen) return;
 
@@ -22,10 +22,10 @@ function Popup({ isOpen, text, onClose, children }) {
 
   return (
     <div
-      className={`popup ${isOpen ? "popup_opened" : ""} popup_type_${text}`}
+      className={`popup ${isOpen ? "popup_opened" : ""} popup_type_${name}`}
       onClick={handleOverlayClick}
     >
-      <div className={`popup__container popup__container_type_${text}`}>
+      <div className={`popup__container popup__container_type_${name}`}>
         {children}
         <button
           className="popup__close-button"

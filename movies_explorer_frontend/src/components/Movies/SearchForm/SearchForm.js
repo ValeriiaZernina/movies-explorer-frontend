@@ -12,8 +12,8 @@ function SearchForm() {
         id="search"
         name="search"
         className="search-film__input"
-        placeholder="Фильм"
         required
+        placeholder="Фильм"
       ></input>
       <button
         aria-label="Найти"

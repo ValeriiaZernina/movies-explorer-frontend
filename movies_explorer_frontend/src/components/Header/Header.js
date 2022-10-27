@@ -1,21 +1,20 @@
+import { useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
 import "./Header.css";
 import Logo from "../Logo/Logo";
 import MenuBtn from "./MenuBtn/MenuBtn";
-import { useLocation } from "react-router-dom";
-import { useEffect, useState } from "react";
 import ProfileLink from "./ProfileLink/ProfileLink";
 import Popup from "../Popup/Popup";
 import MenuLink from "./MenuLink/MenuLink";
 
 function isWindowWide() {
-  return window.innerWidth >= 768;
+  return window.innerWidth > 768;
 }
 
 function Header() {
-  const location = useLocation();
-
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   const [isWide, setIsWide] = useState(isWindowWide());
+  const location = useLocation();
 
   useEffect(() => {
     function handleWindowResize() {
@@ -81,10 +80,11 @@ function Header() {
       ) : (
         <MenuBtn onClick={handleMenuButtonClick}></MenuBtn>
       )}
-      <Popup isOpen={menuIsOpen} onClose={closeMenu} text="menu">
+      <Popup isOpen={menuIsOpen} onClose={closeMenu} name="menu">
         <nav className="header__nav-movies_style_column">
           <MenuLink to="/" subtitle="Главная" linkType="column"></MenuLink>
           <MenuLink to="/movies" subtitle="Фильмы" linkType="column"></MenuLink>
+
           <MenuLink
             to="/saved-movies"
             subtitle="Сохранённые фильмы"

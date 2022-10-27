@@ -9,74 +9,71 @@ import SavedMovies from "../SavedMovies/SavedMovies";
 import Auth from "../Auth/Auth";
 import Profile from "../Profile/Profile";
 import PageNotFound from "../PageNotFound/PageNotFound";
-import { CurrentUserContext } from "../../contexts/CurrentUserContext";
+// import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
 function App() {
   return (
     <div className="page">
-      <CurrentUserContext.Provider>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                <Header></Header>
-                <Main></Main>
-                <Footer></Footer>
-              </>
-            }
-          ></Route>
-          <Route
-            path="/movies"
-            element={
-              <>
-                <Header></Header>
-                <Movies></Movies>
-                <Footer></Footer>
-              </>
-            }
-          ></Route>
-          <Route
-            path="/saved-movies"
-            element={
-              <>
-                <Header></Header>
-                <SavedMovies></SavedMovies>
-                <Footer></Footer>
-              </>
-            }
-          ></Route>
-          <Route
-            path="/profile"
-            element={
-              <>
-                <Header></Header>
-                <Profile></Profile>
-              </>
-            }
-          ></Route>
-          <Route
-            path="/signin"
-            element={
-              <>
-                <Auth formType="login"></Auth>
-              </>
-            }
-          ></Route>
-          <Route
-            path="/signup"
-            element={
-              <>
-                <Auth formType="register"></Auth>
-              </>
-            }
-          ></Route>
-          <Route
-            path="/signout"
-            element={<PageNotFound></PageNotFound>}
-          ></Route>
-        </Routes>
-      </CurrentUserContext.Provider>
+      {/* <CurrentUserContext.Provider> */}
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Header></Header>
+              <Main></Main>
+              <Footer></Footer>
+            </>
+          }
+        ></Route>
+        <Route
+          path="/movies"
+          element={
+            <>
+              <Header></Header>
+              <Movies></Movies>
+              <Footer></Footer>
+            </>
+          }
+        ></Route>
+        <Route
+          path="/saved-movies"
+          element={
+            <>
+              <Header></Header>
+              <SavedMovies></SavedMovies>
+              <Footer></Footer>
+            </>
+          }
+        ></Route>
+        <Route
+          path="/profile"
+          element={
+            <>
+              <Header></Header>
+              <Profile></Profile>
+            </>
+          }
+        ></Route>
+        <Route
+          path="/signin"
+          element={
+            <>
+              <Auth formType="login"></Auth>
+            </>
+          }
+        ></Route>
+        <Route
+          path="/signup"
+          element={
+            <>
+              <Auth formType="register"></Auth>
+            </>
+          }
+        ></Route>
+        <Route path="/signout" element={<PageNotFound></PageNotFound>}></Route>
+      </Routes>
+      {/* </CurrentUserContext.Provider> */}
     </div>
   );
 }

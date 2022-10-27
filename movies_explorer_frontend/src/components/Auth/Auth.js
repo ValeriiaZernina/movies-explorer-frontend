@@ -28,7 +28,7 @@ function Auth({ formType }) {
         <InputValidation
           type="email"
           inputStyle="auth"
-          value="pochta@yandex.ru"
+          value="vita@yandex.ru"
           label="E-mail"
           required
         ></InputValidation>
