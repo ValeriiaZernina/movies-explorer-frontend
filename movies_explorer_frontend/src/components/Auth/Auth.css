@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   max-width: 396px;
+  width: calc(100% - 60px);
   height: 560px;
   margin: 70px auto 0;
 }
@@ -85,4 +86,16 @@
 .auth__error_visible {
   visibility: visible;
   margin-top: 20px;
+}
+
+@media (max-width: 1024px) {
+  .auth {
+    margin: 230px auto 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth {
+    margin-top: 56px;
+  }
 }

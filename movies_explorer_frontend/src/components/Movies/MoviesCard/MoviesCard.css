@@ -74,9 +74,14 @@
 }
 
 @media (max-width: 1024px) {
+  .moviescard {
+    max-width: 342px;
+    margin: 0;
+  }
+
   .moviescard__pic {
     height: 190px;
-    width: 100%;
+    width: 342px;
   }
 }
 

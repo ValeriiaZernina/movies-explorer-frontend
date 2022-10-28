@@ -47,3 +47,21 @@
   font-size: 13px;
   line-height: 16px;
 }
+
+@media (max-width: 1024px) {
+  .profile__form {
+    margin-top: 205px;
+  }
+  .profile__tittle {
+    margin-bottom: 0;
+    padding-bottom: 80px;
+  }
+  .profile__btn {
+    padding-top: 198px;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile__form {
+  }
+}

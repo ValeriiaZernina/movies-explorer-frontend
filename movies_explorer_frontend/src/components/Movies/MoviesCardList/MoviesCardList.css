@@ -9,8 +9,10 @@
 
 @media (max-width: 1024px) {
   .moviescard-list {
-    column-gap: 30px;
-    row-gap: 31px;
+    grid-template-columns: repeat(auto-fill, minmax(342px, 2fr));
+    margin-top: 76px;
+    column-gap: 24px;
+    row-gap: 35px;
   }
 }
 
