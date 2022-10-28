@@ -8,7 +8,7 @@
     "smaller smaller";
   column-gap: 10px;
   border-bottom: 1px solid #424242;
-  margin: 79px 0 10px;
+  margin: 55px 0 10px;
 }
 
 .search-film__input {
@@ -41,7 +41,7 @@
 .search-film__checkbox {
   grid-area: smaller;
   justify-self: center;
-  margin: 29px 10px 39px;
+  margin: 37px 10px 39px;
 }
 
 @media screen and (max-width: 420px) {

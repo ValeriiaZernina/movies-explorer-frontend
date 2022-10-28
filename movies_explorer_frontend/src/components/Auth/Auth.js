@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import InputValidation from "../InputValidation/InputValidation";
 import Logo from "../Logo/Logo";
 
-function Auth({ formType }) {
+function Auth({ formType, authStyle, ...props }) {
   function handleSubmit(e) {
     e.preventDefault();
   }
@@ -28,17 +28,26 @@ function Auth({ formType }) {
         <InputValidation
           type="email"
           inputStyle="auth"
-          value="vita@yandex.ru"
+          value="pochta@yandex.ru"
           label="E-mail"
           required
         ></InputValidation>
         <InputValidation
           type="password"
           inputStyle="auth"
-          value="xxx"
+          // value="xxx"
           label="Пароль"
           required
         ></InputValidation>
+
+        <span
+          className={
+            `auth__error iauth__error_style_${authStyle}` /*input__error_visible*/
+          }
+          id={`${props.id}-error`}
+        >
+          Что-то пошло не так...
+        </span>
 
         <button className="auth__btn" type="submit">
           {formType === "login" ? "Войти" : "Зарегистрироваться"}

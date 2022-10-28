@@ -36,6 +36,10 @@
   margin-bottom: 16px;
 }
 
+.menu-link_style_column:hover {
+  text-decoration: underline;
+}
+
 .menu-link_style_movies {
   font-weight: 400;
   font-size: 13px;

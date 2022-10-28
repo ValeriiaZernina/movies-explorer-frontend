@@ -14,7 +14,7 @@
 
 .auth__title {
   padding: 0;
-  margin: 35px 0 40px;
+  margin: 38px 0 20px;
   font-weight: 500;
   font-size: 24px;
   line-height: 29px;
@@ -23,18 +23,19 @@
 .auth__btn {
   width: 100%;
   padding: 14px 0;
-  margin: auto 0 13px;
+  margin: auto 0 10px;
   background-color: #4285f4;
   border-radius: 3px;
   border: none;
   font-weight: 500;
   font-size: 14px;
-  line-height: 17px;
+  line-height: 16px;
   color: #ffffff;
 }
 
 .auth__btn:hover {
   cursor: pointer;
+  opacity: 80%;
 }
 
 .auth__signin-box {
@@ -58,4 +59,30 @@
   padding: 3px;
   text-decoration: none;
   color: #4285f4;
+}
+
+.auth__error {
+  visibility: hidden;
+  overflow: hidden;
+  color: #ee3465;
+  margin: 10px 0;
+}
+
+.auth__error_style_auth {
+  font-weight: 400;
+  text-align: left;
+  font-size: 10px;
+  line-height: 12px;
+}
+
+.auth__error_style_profile {
+  font-weight: 400;
+  text-align: right;
+  font-size: 10px;
+  line-height: 12px;
+}
+
+.auth__error_visible {
+  visibility: visible;
+  margin-top: 20px;
 }

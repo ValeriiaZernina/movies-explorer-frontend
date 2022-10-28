@@ -10,7 +10,7 @@ function Profile() {
   return (
     <main className="profile">
       <form className="profile__form" onSubmit={handleSubmit}>
-        <h2 className="profile__tittle">Привет, Виталий</h2>
+        <h2 className="profile__tittle">Привет, Виталий!</h2>
         <InputValidation
           inputStyle="profile"
           type="text"
@@ -22,7 +22,7 @@ function Profile() {
           inputStyle="profile"
           type="email"
           label="E-mail"
-          value="vita@yandex.ru"
+          value="pochta@yandex.ru|"
           required
         ></InputValidation>
 

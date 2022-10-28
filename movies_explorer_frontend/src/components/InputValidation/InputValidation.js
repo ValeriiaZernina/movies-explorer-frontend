@@ -18,12 +18,6 @@ function InputValidation({ inputStyle, label, ...props }) {
           onInput={handleInput}
         ></input>
       </label>
-      <span
-        className={`input__error input__error_style_${inputStyle}`}
-        id={`${props.id}-error`}
-      >
-        Вывод ошибки
-      </span>
     </div>
   );
 }

@@ -1,11 +1,12 @@
 .switch__label {
   height: 20px;
-  line-height: 20px;
   margin-right: 10px;
   position: relative;
   vertical-align: middle;
-  font-size: 12px;
   user-select: none;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
 }
 .switch__label .switch__button {
   position: relative;
