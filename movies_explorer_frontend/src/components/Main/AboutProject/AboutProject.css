@@ -41,3 +41,35 @@
   background: transparent;
   margin: 5px 0;
 }
+
+@media (max-width: 1024px) {
+  .about-project__description {
+    column-gap: 30px;
+  }
+
+  .about-project__graph {
+    margin: 82px 0 85px;
+  }
+
+  .about-project__graph-item_span {
+    font-family: "SuisseIntl", Arial, sans-serif;
+    color: #a0a0a0;
+    font-weight: 400;
+    padding: 7px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-project__description {
+    margin-top: 60px;
+  }
+
+  .about-project__graph {
+    margin: 49px 0 62px;
+  }
+
+  .about-project__graph-item {
+    font-size: 11px;
+    line-height: 1.18;
+  }
+}

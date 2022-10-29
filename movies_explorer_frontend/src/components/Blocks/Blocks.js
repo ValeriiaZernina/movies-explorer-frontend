@@ -1,6 +1,13 @@
 import "./Blocks.css";
 
-function Blocks({ name, blocksStyle, titleStyle, itemStyle, children }) {
+function Blocks({
+  name,
+  blocksStyle,
+  blocksSize,
+  titleStyle,
+  itemStyle,
+  children,
+}) {
   return (
     <section className={`blocks blocks_style_${blocksStyle}`}>
       <h2 className={`blocks__title blocks__title_style_${titleStyle} `}>

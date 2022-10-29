@@ -1,5 +1,4 @@
 import "./Promo.css";
-// import promoLogotype from "../../../images/promo-logo.svg";
 
 // Слайд там где изображение карты
 function Promo() {
@@ -14,7 +13,6 @@ function Promo() {
       <button className="promo__btn" type="button">
         Узнать больше
       </button>
-      {/* <img className="promo__logo" src={promoLogotype} alt="Веб Логотип"></img> */}
     </section>
   );
 }

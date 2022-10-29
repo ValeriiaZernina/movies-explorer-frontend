@@ -40,3 +40,63 @@
   line-height: 20px;
   letter-spacing: -0.04em;
 }
+
+@media (max-width: 1024px) {
+  .blocks {
+    --sidepad: 50px;
+  }
+
+  .blocks__title {
+    margin-top: 90px;
+  }
+
+  .blocks__item_style_tech {
+    margin-bottom: 0;
+  }
+
+  .blocks_style_grey,
+  .blocks_style_black {
+    padding-top: 0;
+  }
+
+  .blocks__title_style_grey {
+    margin-top: 86px;
+  }
+
+  .blocks__title_style_light {
+    color: #a0a0a0;
+  }
+}
+
+@media (max-width: 480px) {
+  .blocks {
+    --sidepad: 18px;
+  }
+
+  .blocks_style_grey {
+    --sidepad: 14px;
+  }
+
+  .blocks_style_black {
+    background-color: #202020;
+  }
+
+  .blocks__title {
+    margin-top: 71px;
+    margin-bottom: 0px;
+    padding-bottom: 27px;
+    font-size: 18px;
+    line-height: 1.22;
+  }
+
+  .blocks__title_style_grey {
+    margin: 66px 5px auto;
+    border-bottom: 1px solid #000000;
+  }
+
+  .blocks__title_style_light {
+    font-size: 14px;
+    line-height: 1.43;
+    padding-bottom: 19px;
+  }
+}

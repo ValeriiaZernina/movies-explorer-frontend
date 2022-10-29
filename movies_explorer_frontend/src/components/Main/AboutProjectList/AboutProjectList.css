@@ -18,3 +18,23 @@
   font-size: 14px;
   line-height: 20px;
 }
+
+@media (max-width: 1024px) {
+  .about-project-list__text {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-project-list__title {
+    font-size: 18px;
+    line-height: 1.22;
+  }
+
+  .about-project-list__text {
+    margin-top: 18px;
+    font-size: 11px;
+    line-height: 1.45;
+  }
+}

@@ -22,3 +22,9 @@
   width: 18px;
   height: 18px;
 }
+
+@media (max-width: 1024px) {
+  .portfolio-link__name {
+    font-size: 28px;
+  }
+}

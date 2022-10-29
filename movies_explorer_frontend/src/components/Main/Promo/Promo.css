@@ -34,11 +34,6 @@
   opacity: 60%;
 }
 
-.promo__logo {
-  align-self: flex-end;
-  margin: 103px 70px 60px 0;
-}
-
 .promo__btn {
   font-family: "Inter", Arial, Helvetica, sans-serif;
   transition: 0.3s;
@@ -84,7 +79,21 @@
 }
 
 @media (max-width: 480px) {
-  .promo__logo {
-    margin-top: 56px;
+  .promo {
+    background-position: 45% 13%;
+    background-size: 210px 206px;
+    text-align: center;
+    align-items: center;
+  }
+  .promo__title {
+    margin-top: 319px;
+    font-size: 30px;
+    line-height: 38px;
+    text-align: center;
+    width: 300px;
+    letter-spacing: -0.04em;
+  }
+  .promo__btn {
+    margin: 80px auto 30px;
   }
 }

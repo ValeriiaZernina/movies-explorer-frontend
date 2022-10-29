@@ -3,7 +3,12 @@ import Blocks from "../../Blocks/Blocks";
 
 function Techs() {
   return (
-    <Blocks blocksStyle="grey" titleStyle="grey" name="Технологии" itemStyle="">
+    <Blocks
+      blocksStyle="grey"
+      titleStyle="grey"
+      name="Технологии"
+      itemStyle="tech"
+    >
       <h2 className="techs__title">7 технологий</h2>
       <p className="techs__info">
         На курсе веб-разработки мы освоили технологии, которые применили в

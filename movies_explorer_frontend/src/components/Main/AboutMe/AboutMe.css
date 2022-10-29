@@ -67,3 +67,71 @@
   width: 270px;
   height: 327px;
 }
+
+@media (max-width: 1024px) {
+  .about-me__section {
+    column-gap: 48px;
+  }
+
+  .about-me__name {
+    font-size: 40px;
+    line-height: 40px;
+  }
+
+  .about-me__short {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .about-me__info {
+    mix-blend-mode: normal;
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .about-me__avatar {
+    width: 255px;
+    height: 307px;
+  }
+}
+
+@media (max-width: 680px) {
+  .about-me__section {
+    margin-top: 65px;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "avatar"
+      "name"
+      "short"
+      "info"
+      "github";
+  }
+
+  .about-me__name {
+    font-size: 30px;
+    line-height: 1.2;
+    margin: 42px 0 18px;
+  }
+
+  .about-me__short {
+    font-size: 11px;
+    line-height: 1.45;
+    margin-bottom: 20px;
+  }
+
+  .about-me__info {
+    font-size: 11px;
+    line-height: 16px;
+    margin: 0 auto;
+  }
+
+  .about-me__avatar {
+    height: 352px;
+    width: 100%;
+    justify-self: center;
+  }
+
+  .about-me__github {
+    margin-top: 39px;
+  }
+}
