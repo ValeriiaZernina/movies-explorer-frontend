@@ -22,11 +22,6 @@ function MoviesCard({ isSaved, buttonText }) {
         className={`moviescard__btn-save moviescard__btn-save_type_${
           isMoviesLocation ? (isSaved ? "on" : "") : "delete"
         } link link_style_green`}
-        // className={`${
-        //   isMoviesLocation
-        //     ? "moviescard__btn-save_type_delete"
-        //     : "moviescard__btn-save"
-        // } ${isSaved ? "moviescard__btn-save_type_on" : ""}`}
       >
         {/* {buttonText} */}
       </button>
