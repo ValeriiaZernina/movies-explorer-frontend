@@ -1,0 +1,11 @@
+.profile-btn {
+  background-image: url("../../../images/account_logo.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-left: 16px;
+  position: relative;
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  background-color: #313131;
+}

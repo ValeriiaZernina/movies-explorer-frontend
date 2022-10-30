@@ -1,0 +1,137 @@
+.about-me__section {
+  display: grid;
+  grid-template-columns: 1fr min-content;
+  column-gap: 270px;
+  grid-template-areas:
+    "name avatar"
+    "short avatar"
+    "info avatar"
+    "info avatar"
+    "info avatar"
+    "info avatar"
+    "github avatar";
+  margin: 59px 0 0px;
+}
+
+.about-me__name {
+  grid-area: name;
+  margin: 0;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 58px;
+  letter-spacing: -0.04em;
+}
+
+.about-me__short {
+  grid-area: short;
+  padding: 0;
+  margin: 0;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 20px;
+  mix-blend-mode: normal;
+}
+
+.about-me__info {
+  grid-area: info;
+  padding: 0;
+  margin-top: 10px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.about-me__github {
+  grid-area: github;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  transition: opacity 200ms ease-in-out;
+  align-self: flex-end;
+}
+
+.about-me__github:hover {
+  opacity: 60%;
+  cursor: pointer;
+}
+
+.about-me__avatar {
+  grid-area: avatar;
+  object-fit: cover;
+  justify-self: flex-end;
+  border-radius: 10px;
+  width: 270px;
+  height: 327px;
+}
+
+@media (max-width: 1024px) {
+  .about-me__section {
+    column-gap: 48px;
+  }
+
+  .about-me__name {
+    font-size: 40px;
+    line-height: 40px;
+  }
+
+  .about-me__short {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .about-me__info {
+    mix-blend-mode: normal;
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .about-me__avatar {
+    width: 255px;
+    height: 307px;
+  }
+}
+
+@media (max-width: 680px) {
+  .about-me__section {
+    margin-top: 65px;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "avatar"
+      "name"
+      "short"
+      "info"
+      "github";
+  }
+
+  .about-me__name {
+    font-size: 30px;
+    line-height: 1.2;
+    margin: 42px 0 18px;
+  }
+
+  .about-me__short {
+    font-size: 11px;
+    line-height: 1.45;
+    margin-bottom: 20px;
+  }
+
+  .about-me__info {
+    font-size: 11px;
+    line-height: 16px;
+    margin: 0 auto;
+  }
+
+  .about-me__avatar {
+    height: 352px;
+    width: 100%;
+    justify-self: center;
+  }
+
+  .about-me__github {
+    margin-top: 39px;
+  }
+}

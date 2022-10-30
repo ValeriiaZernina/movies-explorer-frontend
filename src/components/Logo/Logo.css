@@ -1,0 +1,18 @@
+.logo {
+  padding: 0;
+  height: 38px;
+  width: 38px;
+  background-color: transparent;
+  transition: 0.3s;
+}
+
+.logo:hover {
+  opacity: 80%;
+  cursor: pointer;
+}
+
+@media (max-width: 420px) {
+  .logo {
+    margin: 0 auto 0;
+  }
+}

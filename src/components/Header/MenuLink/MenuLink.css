@@ -1,0 +1,82 @@
+.menu-link {
+  text-decoration-line: none;
+  color: inherit;
+  border-radius: 3px;
+}
+
+.menu-link_style_signin {
+  background-color: #3ddc84;
+  height: 32px;
+  width: 76px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+  margin-left: 10px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: #000000;
+}
+
+.menu-link_style_signup {
+  margin-left: 10px;
+  padding: 8px 20px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.menu-link_style_column {
+  font-size: 18px;
+  line-height: 1.22;
+  font-weight: 500;
+  padding: 5px 10px;
+  border-bottom: 2px solid #202020;
+  margin-bottom: 16px;
+}
+
+.menu-link_style_column:hover {
+  text-decoration: underline;
+}
+
+.menu-link_style_movies {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+  text-align: right;
+}
+
+.menu-link_style_saved {
+  padding-left: 16px;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+  text-align: right;
+}
+
+.menu-link_style_row_activated {
+  pointer-events: none;
+}
+
+.menu-link_style_column_activated {
+  pointer-events: none;
+  padding: 5px 0;
+  border-bottom: 2px solid #ffffff;
+  border-radius: 0;
+}
+
+@media screen and (max-width: 480px) {
+  .menu-link {
+    font-size: 10px;
+    line-height: 16px;
+  }
+  .menu-link_style_signin {
+    width: 26px;
+    height: 24px;
+    padding: 5px 12px;
+  }
+  .menu-link_style_signup {
+    padding-right: 12px;
+  }
+}

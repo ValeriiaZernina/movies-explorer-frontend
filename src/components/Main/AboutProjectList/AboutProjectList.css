@@ -1,0 +1,40 @@
+.about-project-list {
+  min-width: 250px;
+}
+
+.about-project-list__title {
+  padding: 0;
+  margin: 0;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: -0.04em;
+}
+
+.about-project-list__text {
+  padding: 0;
+  margin: 25px 0 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+@media (max-width: 1024px) {
+  .about-project-list__text {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-project-list__title {
+    font-size: 18px;
+    line-height: 1.22;
+  }
+
+  .about-project-list__text {
+    margin-top: 18px;
+    font-size: 11px;
+    line-height: 1.45;
+  }
+}

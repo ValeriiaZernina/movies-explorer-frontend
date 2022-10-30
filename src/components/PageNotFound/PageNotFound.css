@@ -1,0 +1,69 @@
+.pageNotFound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 0;
+  left: 0;
+  background-color: #202020;
+  color: #ffffff;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: 100;
+  min-width: 300px;
+}
+
+.pageNotFound__header {
+  padding: 0;
+  font-weight: 400;
+  font-size: 140px;
+  margin: 250px 0 10px;
+}
+
+.pageNotfound__message {
+  padding: 0;
+  margin: 0 0 185px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.pageNotfound__back {
+  transition: 0.3s;
+  border: none;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #4285f4;
+  background-color: #202020;
+}
+
+.pageNotfound__back:hover {
+  cursor: pointer;
+  opacity: 70%;
+}
+
+@media (max-width: 768px) {
+  .pageNotFound__header {
+    margin-top: 408px;
+  }
+}
+
+@media (max-width: 420px) {
+  .pageNotFound__header {
+    margin: calc(100vh / 2 - 290px) 0 12px;
+    font-size: 80px;
+  }
+
+  .pageNotfound__message {
+    margin: 5px 0 0;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .pageNotfound__back {
+    margin: 282px 0 22px;
+    font-size: 12px;
+    line-height: 15px;
+  }
+}

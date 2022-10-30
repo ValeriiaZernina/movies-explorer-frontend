@@ -1,0 +1,30 @@
+.portfolio__link {
+  margin: 0;
+  padding: 20px 0 19px;
+  color: inherit;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.portfolio-link__name {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 50px;
+  letter-spacing: -0.04em;
+}
+
+.portfolio-link__image {
+  object-fit: contain;
+  margin: 20px 7px 0;
+  width: 18px;
+  height: 18px;
+}
+
+@media (max-width: 1024px) {
+  .portfolio-link__name {
+    font-size: 28px;
+  }
+}
