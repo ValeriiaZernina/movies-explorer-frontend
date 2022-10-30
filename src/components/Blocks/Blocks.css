@@ -75,6 +75,7 @@
 
   .blocks_style_grey {
     --sidepad: 14px;
+    background-color: #222222;
   }
 
   .blocks_style_black {

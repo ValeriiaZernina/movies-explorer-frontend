@@ -96,6 +96,31 @@
 
 @media (max-width: 480px) {
   .auth {
-    margin-top: 56px;
+    margin: 0 30px;
+    padding: 56px 0 30px;
+    align-items: center;
+    height: 100vh;
+    min-height: 560px;
+  }
+  .auth__form {
+    height: calc(100vh - 127px);
+  }
+  .auth__title {
+    text-align: center;
+    margin: 46px 0 60px;
+  }
+  .auth__btn {
+    margin-top: 222px;
+    margin-bottom: 12px;
+    font-size: 12px;
+    line-height: 15px;
+  }
+  .auth__signin-box {
+    font-size: 12px;
+    line-height: 15px;
+  }
+  .auth__question {
+    font-size: 12px;
+    line-height: 15px;
   }
 }
