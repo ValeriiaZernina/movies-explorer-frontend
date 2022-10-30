@@ -8,19 +8,19 @@ function Portfolio() {
       <ul className="portfolio__list">
         <li className="portfolio__list-item">
           <PortfolioLinks
-            href="https://github.com/ValeriiaZernina/how-to-learn"
+            href="https://valeriiazernina.github.io/how-to-learn/index.html"
             name="Статичный сайт"
           ></PortfolioLinks>
         </li>
         <li className="portfolio__list-item">
           <PortfolioLinks
-            href="https://github.com/ValeriiaZernina/russian-travel"
+            href="https://valeriiazernina.github.io/russian-travel/index.html"
             name="Адаптивный сайт"
           ></PortfolioLinks>
         </li>
         <li className="portfolio__list-item">
           <PortfolioLinks
-            href="https://github.com/ValeriiaZernina/react-mesto-api-full"
+            href="https://valeriiazernina.github.io/mesto/index.html"
             name="Одностраничное приложение"
           ></PortfolioLinks>
         </li>

@@ -85,7 +85,11 @@
   }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 480px) {
+  .moviescard {
+    max-width: 300px;
+  }
+
   .moviescard__pic {
     height: 168px;
     width: 100%;
