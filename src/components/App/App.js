@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
-import { Routes, Route } from "react-router-dom";
+import {
+  Outlet,
+  Routes,
+  Route,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
@@ -9,71 +15,146 @@ import SavedMovies from "../SavedMovies/SavedMovies";
 import Auth from "../Auth/Auth";
 import Profile from "../Profile/Profile";
 import PageNotFound from "../PageNotFound/PageNotFound";
-// import { CurrentUserContext } from "../../contexts/CurrentUserContext";
+import { CurrentUserContext } from "../../contexts/CurrentUserContext";
+import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
+import { auth } from "../../utils/Auth";
 
 function App() {
+  const [currentUser, setCurrentUser] = useState({ loggedIn: false });
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    const loggedIn = localStorage.getItem("loggedIn");
+    if (loggedIn) {
+      auth
+        .getUserInfo()
+        .then((data) => {
+          setCurrentUser((curr) => {
+            return { ...curr, loggedIn: true, ...data };
+          });
+        })
+        .catch(() => {
+          navigate("/");
+        });
+    } else {
+      setCurrentUser((curr) => {
+        return { loggedIn: false };
+      });
+    }
+  }, []);
+
+  // logout в случае, если любой запрос к серверу заканчивается ошибкой авторизации
+  useEffect(() => {
+    if (location.pathname === "./signout") {
+      auth
+        .logout()
+        .catch((err) => alert(err))
+        .finally(() => {
+          localStorage.removeItem("loggedIn");
+          localStorage.removeItem("filteredMovies");
+          localStorage.removeItem("filterString");
+          localStorage.removeItem("isShortMovie");
+          savedMovies.logoff();
+          setErrorMessage("");
+          setCurrentUser((curr) => {
+            return { loggedIn: false };
+          });
+          navigate("/");
+        });
+    }
+  }, [location]);
+
+  // Обработка авторизации
+  function handleLogin(data) {
+    const { email, password } = data;
+    authorize(email, password)
+      .then((data) => {
+        if (data.message === "Athorization successful") {
+          localStorage.setItem("loggedIn", true);
+          navigate("/movies", { replace: true });
+          setCurrentUser((curr) => {
+            return { ...curr, loggedIn: true };
+          });
+        }
+      })
+      .catch(() => {
+        setCurrentUser((curr) => {
+          return { loggedIn: false };
+        });
+        navigate("/");
+      });
+  }
+
+  function handleChangeProfile(name, email) {
+    setCurrentUser((curr) => {
+      return { ...curr, name, email };
+    });
+  }
+
   return (
     <div className="page">
-      {/* <CurrentUserContext.Provider> */}
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <Header></Header>
-              <Main></Main>
-              <Footer></Footer>
-            </>
-          }
-        ></Route>
-        <Route
-          path="/movies"
-          element={
-            <>
-              <Header></Header>
-              <Movies></Movies>
-              <Footer></Footer>
-            </>
-          }
-        ></Route>
-        <Route
-          path="/saved-movies"
-          element={
-            <>
-              <Header></Header>
-              <SavedMovies></SavedMovies>
-              <Footer></Footer>
-            </>
-          }
-        ></Route>
-        <Route
-          path="/profile"
-          element={
-            <>
-              <Header></Header>
-              <Profile></Profile>
-            </>
-          }
-        ></Route>
-        <Route
-          path="/signin"
-          element={
-            <>
-              <Auth formType="login"></Auth>
-            </>
-          }
-        ></Route>
-        <Route
-          path="/signup"
-          element={
-            <>
-              <Auth formType="register"></Auth>
-            </>
-          }
-        ></Route>
-        <Route path="/signout" element={<PageNotFound></PageNotFound>}></Route>
-      </Routes>
-      {/* </CurrentUserContext.Provider> */}
+      <CurrentUserContext.Provider value={currentUser} r>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Header></Header>
+                <Outlet></Outlet>
+                <Footer></Footer>
+              </>
+            }
+          >
+            <Route element={<Main></Main>}></Route>
+            <Route element={<ProtectedRoute></ProtectedRoute>}>
+              <Route
+                path="/movies"
+                element={
+                  <>
+                    <Movies></Movies>
+                  </>
+                }
+              ></Route>
+              <Route
+                path="/saved-movies"
+                element={
+                  <>
+                    <SavedMovies></SavedMovies>
+                  </>
+                }
+              ></Route>
+              <Route
+                path="/profile"
+                element={
+                  <>
+                    <Profile onChange={handleChangeProfile}></Profile>
+                  </>
+                }
+              ></Route>
+            </Route>
+          </Route>
+
+          <Route
+            path="/signin"
+            element={
+              <>
+                <Auth formType="login" onSubmit={handleLogin}></Auth>
+              </>
+            }
+          ></Route>
+          <Route
+            path="/signup"
+            element={
+              <>
+                <Auth formType="register" onSubmit={handleLogin}></Auth>
+              </>
+            }
+          ></Route>
+          <Route path="/signout" element={<></>}></Route>
+          <Route path="*" element={<PageNotFound></PageNotFound>}></Route>
+        </Routes>
+      </CurrentUserContext.Provider>
     </div>
   );
 }

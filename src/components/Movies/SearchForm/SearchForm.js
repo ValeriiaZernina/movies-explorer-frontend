@@ -1,5 +1,6 @@
 import "./SearchForm.css";
 import Checkbox from "../Checkbox/Checkbox";
+import { useState } from "react";
 
 function SearchForm() {
   function handleSubmit(e) {

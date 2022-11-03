@@ -29,6 +29,7 @@ function Popup({ isOpen, name, onClose, children }) {
         {children}
         <button
           className="popup__close-button"
+          aria-label="Закрыть форму"
           type="button"
           onClick={onClose}
         ></button>
