@@ -20,7 +20,6 @@ function InputValidation({
           className={`input input_style_${inputStyle} ${
             !!errorText && "input_error-value"
           }`}
-          {...props}
           onInput={handleInput}
         ></input>
       </label>

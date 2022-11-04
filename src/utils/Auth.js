@@ -2,7 +2,7 @@ import Api from "./Api";
 import { URL } from "./constants";
 
 class Auth extends Api {
-  register(name, email, password) {
+  register({ name, email, password }) {
     return fetch(`${this._baseURL}/signup`, {
       method: "POST",
       headers: this._headers,

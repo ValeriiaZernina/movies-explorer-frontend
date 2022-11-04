@@ -42,6 +42,31 @@ class MoviesApi extends Api {
     }
     return filteredMovies;
   }
+
+  getFilteredMovies(filterString, isShortMovie) {
+    // проверяем локальное хранилище
+    if (localStorage.getItem("filterString") === filterString) {
+      if (localStorage.getItem("isShortMovie") !== isShortMovie + "") {
+        localStorage.setItem("isShortMovie", isShortMovie);
+      }
+      return Promise.resolve(
+        this._getIsShortMovie(
+          JSON.parse(localStorage.getItem("filteredMovies")),
+          isShortMovie
+        )
+      );
+    }
+
+    if (this._savedMovies.length === 0) {
+      return this._getMovies().then(() =>
+        this._getFilteredMoviesFromSaved(filterString, isShortMovie)
+      );
+    } else {
+      return Promise.resolve(
+        this._getFilteredMoviesFromSaved(filterString, isShortMovie)
+      );
+    }
+  }
 }
 
 const movies = new MoviesApi({

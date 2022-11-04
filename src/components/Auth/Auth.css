@@ -38,6 +38,11 @@
   opacity: 80%;
 }
 
+.auth__btn:disabled {
+  background-color: #f8f8f8;
+  color: #c2c2c2;
+}
+
 .auth__signin-box {
   display: flex;
   justify-content: center;

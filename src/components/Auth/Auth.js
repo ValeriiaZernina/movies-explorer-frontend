@@ -9,7 +9,7 @@ import InputValidation from "../InputValidation/InputValidation";
 import Logo from "../Logo/Logo";
 
 function Auth({ formType, authStyle, errorText, onSubmit, ...props }) {
-  const { resetForm, values, handleInput, errors, isValid } =
+  const { values, handleInput, errors, isValid, resetForm } =
     useFormWithValidation();
   const { statusInfoTooltip, openInfoTooltip, closeInfoTooltip } =
     useInfoTooltip(onSubmit);
@@ -18,7 +18,7 @@ function Auth({ formType, authStyle, errorText, onSubmit, ...props }) {
     resetForm();
   }, [formType, resetForm]);
 
-  function handleRegister(name, email, password) {
+  function handleRegister({ name, email, password }) {
     auth
       .register({ name, email, password })
       .then(() => auth.login({ email, password }))
@@ -30,7 +30,7 @@ function Auth({ formType, authStyle, errorText, onSubmit, ...props }) {
       });
   }
 
-  function handleLogin(email, password) {
+  function handleLogin({ email, password }) {
     auth
       .login({ email, password })
       .then(() => {

@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
 import "./App.css";
 import {
   Outlet,
-  Routes,
   Route,
+  Routes,
   useLocation,
   useNavigate,
 } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
@@ -43,6 +43,7 @@ function App() {
         return { loggedIn: false };
       });
     }
+    // eslint-disable-next-line
   }, []);
 
   // logout в случае, если любой запрос к серверу заканчивается ошибкой авторизации
@@ -63,6 +64,7 @@ function App() {
           navigate("/");
         });
     }
+    // eslint-disable-next-line
   }, [location]);
 
   // Обработка авторизации

@@ -11,8 +11,7 @@ export function useFormWithValidation() {
     let validationMessage = event.target.validationMessage;
 
     if (name === "name" && event.target.validity.patternMismatch) {
-      validationMessage =
-        "Имя должно содержать латиницу, кирилицу, пробел или дефис";
+      validationMessage = "Имя должно содержать латиницу или кирилицу";
     }
 
     setValues({ ...values, [name]: value });
