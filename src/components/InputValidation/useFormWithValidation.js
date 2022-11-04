@@ -6,18 +6,18 @@ export function useFormWithValidation() {
   const [errors, setErrors] = useState({});
   const [isValid, setIsValid] = useState(true);
 
-  if (name === "name" && e.target.validity.patternMismatch) {
-    validationMessage =
-      "Имя должно содержать латиницу, кирилицу, пробел или дефис";
-  }
-
   const handleInput = (event) => {
     const { name, value } = event.target;
-    const validationMessage = event.target.validationMessage;
+    let validationMessage = event.target.validationMessage;
+
+    if (name === "name" && event.target.validity.patternMismatch) {
+      validationMessage =
+        "Имя должно содержать латиницу, кирилицу, пробел или дефис";
+    }
 
     setValues({ ...values, [name]: value });
     setErrors({ ...errors, [name]: validationMessage });
-    setIsValid(target.closest("form").checkValidity());
+    setIsValid(event.target.closest("form").checkValidity());
   };
 
   const resetForm = useCallback(

@@ -1,10 +1,8 @@
 import "./InputValidation.css";
-import { useState } from "react";
 
-function InputValidation({ inputStyle, label, ...props }) {
-  const [errorMesage, setErrorMessage] = useState("");
+function InputValidation({ inputStyle, label, onInputEvent, ...props }) {
   function handleInput(e) {
-    setErrorMessage(e.target.validationMessage);
+    onInputEvent(e);
   }
   return (
     <div className={`input__section input__section_style_${inputStyle}`}>

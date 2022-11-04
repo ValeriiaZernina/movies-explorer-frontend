@@ -17,12 +17,12 @@ function InfoTooltip({ status, onClose }) {
       style={status.isOk ? "green" : "red"}
     >
       <img
-        alt="Статус регистрации"
+        alt={status.isOk ? "успешно" : "ошибка"}
         className="info-tooltip__img"
-        src={status ? successReg : failReg}
+        src={status.isOk ? successReg : failReg}
       />
       <h2 className="info-tooltip__title">
-        {status
+        {status.isOk
           ? "Вы успешно зарегистрировались!"
           : "Что-то пошло не так! Попробуйте ещё раз."}
       </h2>

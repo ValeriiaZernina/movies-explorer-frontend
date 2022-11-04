@@ -9,7 +9,7 @@ import InputValidation from "../InputValidation/InputValidation";
 import Logo from "../Logo/Logo";
 
 function Auth({ formType, authStyle, onSubmit, ...props }) {
-  const { resetForm, data, handleInput, errors, isValid } =
+  const { resetForm, values, handleInput, errors, isValid } =
     useFormWithValidation();
   const { flagsInfoTooltip, openInfoTooltip, closeInfoTooltip } =
     useInfoTooltip(onSubmit);
@@ -45,9 +45,9 @@ function Auth({ formType, authStyle, onSubmit, ...props }) {
     e.preventDefault();
 
     if (formType === "login") {
-      handleLogin(data);
+      handleLogin(values);
     } else {
-      handleRegister(data);
+      handleRegister(values);
     }
   }
 
@@ -71,7 +71,7 @@ function Auth({ formType, authStyle, onSubmit, ...props }) {
             maxLength="30"
             placeholder="введите имя"
             id="name"
-            value={data.name || ""}
+            value={values.name || ""}
             errorText={errors.name}
             label="Имя"
           ></InputValidation>
@@ -83,7 +83,7 @@ function Auth({ formType, authStyle, onSubmit, ...props }) {
           onInputEvent={handleInput}
           placeholder="введите email"
           id="email"
-          value={data.email || ""}
+          value={values.email || ""}
           errorText={errors.email}
           label="E-mail"
         ></InputValidation>
@@ -94,7 +94,7 @@ function Auth({ formType, authStyle, onSubmit, ...props }) {
           onInputEvent={handleInput}
           label="Пароль"
           id="password"
-          value={data.password || ""}
+          value={values.password || ""}
           errorText={errors.password}
         ></InputValidation>
 
@@ -107,7 +107,7 @@ function Auth({ formType, authStyle, onSubmit, ...props }) {
           Что-то пошло не так...
         </span>
 
-        <button className="auth__btn" type="submit" disabled={!isValid}>
+        <button className="auth__btn link" type="submit" disabled={!isValid}>
           {formType === "login" ? "Войти" : "Зарегистрироваться"}
         </button>
         <div className="auth__signin-box">
