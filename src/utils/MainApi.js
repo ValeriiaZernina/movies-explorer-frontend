@@ -42,6 +42,7 @@ class MainApi extends Api {
     if (!movie._id && !this._savedMovies) {
       return Promise.reject("Удаление невозможно!");
     }
+    let id = movie._id;
     return fetch(`${this._baseUrl}/movies/${id}`, {
       method: "DELETE",
       credentials: "include",

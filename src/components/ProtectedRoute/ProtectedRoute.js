@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Outlet, Route, Redirect } from "react-router-dom";
+import { Outlet, Route, Navigate } from "react-router-dom";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
 function ProtectedRoute() {
@@ -7,7 +7,7 @@ function ProtectedRoute() {
 
   return (
     <Route>
-      {() => (currentUser.loggedIn ? <Outlet /> : <Redirect to="/" />)}
+      {() => (currentUser.loggedIn ? <Outlet /> : <Navigate to="/" />)}
     </Route>
   );
 }

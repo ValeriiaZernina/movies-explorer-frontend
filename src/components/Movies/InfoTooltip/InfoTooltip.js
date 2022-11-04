@@ -1,8 +1,8 @@
 import "./InfoTooltip.css";
 import Popup from "../../Popup/Popup";
 import React from "react";
-import successReg from "../images/successful_login.svg";
-import failReg from "../images/fail_login.svg";
+import successReg from "../../../images/successful_login.svg";
+import failReg from "../../../images/fail_login.svg";
 
 function InfoTooltip({ status, onClose }) {
   function handleClose() {

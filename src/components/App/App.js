@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import {
   Outlet,
@@ -18,6 +18,7 @@ import PageNotFound from "../PageNotFound/PageNotFound";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 import { auth } from "../../utils/Auth";
+import { savedMovies } from "../../utils/MainApi";
 
 function App() {
   const [currentUser, setCurrentUser] = useState({ loggedIn: false });
@@ -56,7 +57,6 @@ function App() {
           localStorage.removeItem("filterString");
           localStorage.removeItem("isShortMovie");
           savedMovies.logoff();
-          setErrorMessage("");
           setCurrentUser((curr) => {
             return { loggedIn: false };
           });
@@ -68,7 +68,7 @@ function App() {
   // Обработка авторизации
   function handleLogin(data) {
     const { email, password } = data;
-    authorize(email, password)
+    auth(email, password)
       .then((data) => {
         if (data.message === "Athorization successful") {
           localStorage.setItem("loggedIn", true);
