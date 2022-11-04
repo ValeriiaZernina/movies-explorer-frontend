@@ -1,6 +1,12 @@
 import "./InputValidation.css";
 
-function InputValidation({ inputStyle, label, onInputEvent, ...props }) {
+function InputValidation({
+  inputStyle,
+  label,
+  errorText,
+  onInputEvent,
+  ...props
+}) {
   function handleInput(e) {
     onInputEvent(e);
   }
@@ -11,7 +17,9 @@ function InputValidation({ inputStyle, label, onInputEvent, ...props }) {
         <input
           id={props.id}
           name={props.id}
-          className={`input input_style_${inputStyle}`}
+          className={`input input_style_${inputStyle} ${
+            !!errorText && "input_error-value"
+          }`}
           {...props}
           onInput={handleInput}
         ></input>

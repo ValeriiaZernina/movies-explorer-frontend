@@ -8,10 +8,10 @@ import { useInfoTooltip } from "../Movies/InfoTooltip/useInfoTooltip";
 import InputValidation from "../InputValidation/InputValidation";
 import Logo from "../Logo/Logo";
 
-function Auth({ formType, authStyle, onSubmit, ...props }) {
+function Auth({ formType, authStyle, errorText, onSubmit, ...props }) {
   const { resetForm, values, handleInput, errors, isValid } =
     useFormWithValidation();
-  const { flagsInfoTooltip, openInfoTooltip, closeInfoTooltip } =
+  const { statusInfoTooltip, openInfoTooltip, closeInfoTooltip } =
     useInfoTooltip(onSubmit);
 
   useEffect(() => {
@@ -69,7 +69,7 @@ function Auth({ formType, authStyle, onSubmit, ...props }) {
             pattern="[a-zA-Zа-яА-Я -]*"
             minLength="2"
             maxLength="30"
-            placeholder="введите имя"
+            placeholder="Введите Имя"
             id="name"
             value={values.name || ""}
             errorText={errors.name}
@@ -81,7 +81,7 @@ function Auth({ formType, authStyle, onSubmit, ...props }) {
           inputStyle="auth"
           required
           onInputEvent={handleInput}
-          placeholder="введите email"
+          placeholder="Введите Email"
           id="email"
           value={values.email || ""}
           errorText={errors.email}
@@ -92,6 +92,7 @@ function Auth({ formType, authStyle, onSubmit, ...props }) {
           inputStyle="auth"
           required
           onInputEvent={handleInput}
+          placeholder="Введите Пароль"
           label="Пароль"
           id="password"
           value={values.password || ""}
@@ -99,12 +100,12 @@ function Auth({ formType, authStyle, onSubmit, ...props }) {
         ></InputValidation>
 
         <span
-          className={
-            `auth__error iauth__error_style_${authStyle}` /*input__error_visible*/
-          }
+          className={`auth__error iauth__error_style_${authStyle} ${
+            !!errorText && "input__error_visible"
+          }`}
           id={`${props.id}-error`}
         >
-          Что-то пошло не так...
+          {errorText}
         </span>
 
         <button className="auth__btn link" type="submit" disabled={!isValid}>
@@ -125,7 +126,7 @@ function Auth({ formType, authStyle, onSubmit, ...props }) {
         </div>
       </form>
       <InfoTooltip
-        flags={flagsInfoTooltip}
+        status={statusInfoTooltip}
         onClose={closeInfoTooltip}
       ></InfoTooltip>
     </main>

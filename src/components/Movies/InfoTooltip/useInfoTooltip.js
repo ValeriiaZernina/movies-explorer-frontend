@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export function useInfoTooltip(onSubmit) {
-  const [flagsInfoTooltip, setFlagsInfoTooltip] = useState({
+  const [statusInfoTooltip, setFlagsInfoTooltip] = useState({
     isOpen: false,
     isOk: false,
     message: "",
@@ -37,5 +37,5 @@ export function useInfoTooltip(onSubmit) {
     });
   }
 
-  return { flagsInfoTooltip, openInfoTooltip, closeInfoTooltip };
+  return { statusInfoTooltip, openInfoTooltip, closeInfoTooltip };
 }
