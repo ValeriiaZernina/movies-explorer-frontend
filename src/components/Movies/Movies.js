@@ -21,7 +21,7 @@ function Movies() {
     if (filterString.length > 0) {
       setIsLoading(true);
       Promise.all([
-        movies._getMovies(),
+        movies._getMovies(isShortMovie),
         //movies.getFilteredMovies(filterString, isShortMovie),
         savedMovies.getMovies(),
       ])

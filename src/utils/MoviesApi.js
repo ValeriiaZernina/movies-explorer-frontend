@@ -8,30 +8,33 @@ class MoviesApi extends Api {
     this._savedMovies = [];
   }
 
-  _getMovies() {
+  _getMovies(isShortMovie) {
     return fetch(`${MOVIES_URL}/beatfilm-movies`, {
       method: "GET",
       headers: this._headers,
     })
       .then((res) => this._checkResponseStatus(res))
       .then((data) => {
-        return (this._savedMovies = data.map((value) => {
-          return {
-            country: value.country ? value.country : "Неизвестно",
-            director: value.director,
-            duration: value.duration,
-            year: value.year,
-            description: value.description,
-            image: this._url + value.image.url,
-            trailerLink: !value.trailerLink.includes("https")
-              ? `${"https://www.youtube.com"}`
-              : value.trailerLink,
-            thumbnail: this._url + value.image.formats.thumbnail.url,
-            movieId: value.id,
-            nameRU: value.nameRU,
-            nameEN: value.nameEN,
-          };
-        }));
+        return (this._savedMovies = this._getShortMovie(
+          data.map((value) => {
+            return {
+              country: value.country ? value.country : "Неизвестно",
+              director: value.director,
+              duration: value.duration,
+              year: value.year,
+              description: value.description,
+              image: this._url + value.image.url,
+              trailerLink: !value.trailerLink.includes("https")
+                ? `${"https://www.youtube.com"}`
+                : value.trailerLink,
+              thumbnail: this._url + value.image.formats.thumbnail.url,
+              movieId: value.id,
+              nameRU: value.nameRU,
+              nameEN: value.nameEN,
+            };
+          }),
+          isShortMovie
+        ));
       });
   }
 
