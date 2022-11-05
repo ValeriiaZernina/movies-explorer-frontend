@@ -22,9 +22,11 @@ class MoviesApi extends Api {
             duration: value.duration,
             year: value.year,
             description: value.description,
-            image: this._baseUrl + value.image.url,
-            trailerLink: value.trailerLink,
-            thumbnail: this._baseUrl + value.image.formats.thumbnail.url,
+            image: this._url + value.image.url,
+            trailerLink: !value.trailerLink.includes("https")
+              ? `${"https://www.youtube.com"}`
+              : value.trailerLink,
+            thumbnail: this._url + value.image.formats.thumbnail.url,
             movieId: value.id,
             nameRU: value.nameRU,
             nameEN: value.nameEN,
@@ -42,35 +44,8 @@ class MoviesApi extends Api {
     }
     return filteredMovies;
   }
-
-  getFilteredMovies(filterString, isShortMovie) {
-    // проверяем локальное хранилище
-    if (localStorage.getItem("filterString") === filterString) {
-      if (localStorage.getItem("isShortMovie") !== isShortMovie + "") {
-        localStorage.setItem("isShortMovie", isShortMovie);
-      }
-      return Promise.resolve(
-        this._getIsShortMovie(
-          JSON.parse(localStorage.getItem("filteredMovies")),
-          isShortMovie
-        )
-      );
-    }
-
-    if (this._savedMovies.length === 0) {
-      return this._getMovies().then(() =>
-        this._getFilteredMoviesFromSaved(filterString, isShortMovie)
-      );
-    } else {
-      return Promise.resolve(
-        this._getFilteredMoviesFromSaved(filterString, isShortMovie)
-      );
-    }
-  }
 }
 
-const movies = new MoviesApi({
-  baseUrl: MOVIES_URL,
-});
+const movies = new MoviesApi(MOVIES_URL);
 
 export { movies };

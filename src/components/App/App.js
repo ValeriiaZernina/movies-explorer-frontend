@@ -60,8 +60,6 @@ function App() {
         .catch((err) => alert(err))
         .finally(() => {
           localStorage.removeItem("loggedIn");
-          localStorage.removeItem("filteredMovies");
-          localStorage.removeItem("filterString");
           localStorage.removeItem("isShortMovie");
           savedMovies.logoff();
           setCurrentUser((curr) => {

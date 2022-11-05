@@ -8,7 +8,7 @@ class MainApi extends Api {
   }
 
   _getMovies() {
-    return fetch(`${this._baseUrl}/movies`, {
+    return fetch(`${this._url}/movies`, {
       method: "GET",
       headers: this._headers,
       credentials: "include",
@@ -30,7 +30,7 @@ class MainApi extends Api {
   }
 
   saveMovie(movieData) {
-    return fetch(`${this._baseUrl}/movies`, {
+    return fetch(`${this._url}/movies`, {
       method: "POST",
       credentials: "include",
       headers: this._headers,
@@ -43,7 +43,7 @@ class MainApi extends Api {
       return Promise.reject("Удаление невозможно!");
     }
     let id = movie._id;
-    return fetch(`${this._baseUrl}/movies/${id}`, {
+    return fetch(`${this._url}/movies/${id}`, {
       method: "DELETE",
       credentials: "include",
       headers: this._headers,
@@ -55,8 +55,6 @@ class MainApi extends Api {
   }
 }
 
-const savedMovies = new MainApi({
-  baseUrl: URL,
-});
+const savedMovies = new MainApi(URL);
 
 export { savedMovies };
