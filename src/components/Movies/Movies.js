@@ -24,24 +24,25 @@ function Movies() {
         movies.getFilteredMovies(filterString, isShortMovie),
         savedMovies.getMovies(),
       ])
-        .then((movie, savedData) => {
+        .then((movies, savedData) => {
           setCardsToRender(
-            movie.map((movie) => {
-              const found = savedData.find(
-                (element) => element.movieId === movie.movieId
-              );
+            movies
+            // movies.map((movie) => {
+            //   const found = savedData.find(
+            //     (element) => element.movieId === movie.movieId
+            //   );
 
-              if (found) {
-                movie.owner = found.owner;
-              }
-              return movie;
-            })
+            //   if (found) {
+            //     movie.owner = found.owner;
+            //   }
+            //   return movie;
+            // })
           );
           setErrorResponce("");
         })
         .catch((err) =>
           setErrorResponce(
-            `Во время запроса произошла ошибка (${err}). Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз`
+            `Ошибка (${err}). Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз`
           )
         )
         .finally(() => setIsLoading(false));
@@ -64,7 +65,7 @@ function Movies() {
       ) : cardsToRender.lenght > 0 ? (
         <MoviesCardList cardsToRender={cardsToRender}></MoviesCardList>
       ) : filterString.length > 0 ? (
-        <div>Ничего не найдено</div>
+        <div className="movies__notfound-message">Ничего не найдено</div>
       ) : (
         ""
       )}

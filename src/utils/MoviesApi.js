@@ -15,7 +15,7 @@ class MoviesApi extends Api {
     })
       .then((res) => this._checkResponseStatus(res))
       .then((data) => {
-        return (this._savedMovies = data.map((value) => {
+        this._savedMovies = data.map((value) => {
           return {
             country: value.country ? value.country : "Неизвестно",
             director: value.director,
@@ -31,7 +31,8 @@ class MoviesApi extends Api {
             nameRU: value.nameRU,
             nameEN: value.nameEN,
           };
-        }));
+        });
+        return true;
       });
   }
 

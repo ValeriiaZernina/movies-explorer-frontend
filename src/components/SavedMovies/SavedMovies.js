@@ -40,7 +40,7 @@ function SavedMovies() {
       ) : cardsToRender.length > 0 ? (
         <MoviesCardList cardsToRender={cardsToRender}></MoviesCardList>
       ) : filterString.length > 0 ? (
-        <div>Нет сохраненных фильмов удовлетворяющих условиям поиска</div>
+        <div>По результатам поиска фильмов не найдено</div>
       ) : (
         "Нет сохраненных фильмов"
       )}

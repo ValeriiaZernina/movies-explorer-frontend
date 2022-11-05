@@ -2,7 +2,7 @@ import "./MoviesCard.css";
 import { useLocation } from "react-router-dom";
 import { convertMinutesToHours } from "../../../utils/constants";
 
-function MoviesCard({ movie, onDeleteMovie, onSaveMovie }) {
+function MoviesCard({ movie, onSaveMovie, onDeleteMovie }) {
   const isMoviesLocation = useLocation().pathname === "/movies";
 
   function handleSaveClick() {

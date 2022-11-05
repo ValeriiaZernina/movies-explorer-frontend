@@ -6,9 +6,9 @@ import { useInfoTooltip } from "../InfoTooltip/useInfoTooltip";
 
 function SearchForm({
   filterString,
+  onChangeFilterString,
   isShortMovie,
   onChangeIsShortMovie,
-  onChangeFilterString,
   isErrorEmpty,
 }) {
   const [inputValue, setInputValue] = useState(filterString);

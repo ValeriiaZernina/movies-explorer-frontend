@@ -7,7 +7,7 @@ class MainApi extends Api {
     this._savedMovies = undefined;
   }
 
-  getMovies() {
+  _getMovies() {
     return fetch(`${this._url}/movies`, {
       method: "GET",
       headers: this._headers,
@@ -41,13 +41,18 @@ class MainApi extends Api {
     return this._getShortMovie(result, isShortMovie);
   }
 
-  saveMovie(movieData) {
+  saveMovie(movie) {
     return fetch(`${this._url}/movies`, {
       method: "POST",
       credentials: "include",
       headers: this._headers,
-      body: JSON.stringify(movieData),
-    }).then(this._checkResponseStatus);
+      body: JSON.stringify(movie),
+    })
+      .then(this._checkResponseStatus)
+      .then((data) => {
+        this._savedMovies.push(data);
+        return data;
+      });
   }
 
   deleteMovie(movie) {
@@ -83,6 +88,14 @@ class MainApi extends Api {
       return Promise.resolve(
         this._getFilteredMoviesFromSaved(filterString, isShortMovie)
       );
+    }
+  }
+
+  getMovies() {
+    if (!this._savedMovies) {
+      return this._getMovies().then(() => this._savedMovies);
+    } else {
+      return Promise.resolve(this._savedMovies);
     }
   }
 
