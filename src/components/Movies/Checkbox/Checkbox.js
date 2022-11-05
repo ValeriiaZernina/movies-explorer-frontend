@@ -1,7 +1,7 @@
 import "./Checkbox.css";
 
-function Checkbox({ name, className, onChange, value }) {
-  function handelChange(e) {
+function Checkbox({ onChange, name, className, value }) {
+  function handleChange(e) {
     onChange(e.target.checked);
   }
 
@@ -10,7 +10,7 @@ function Checkbox({ name, className, onChange, value }) {
       <input
         type="checkbox"
         defaultChecked={value}
-        onChange={handelChange}
+        onChange={handleChange}
       ></input>
       <span className="switch__button"></span>
       {name}

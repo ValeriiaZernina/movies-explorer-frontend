@@ -21,12 +21,13 @@ function Movies() {
     if (filterString.length > 0) {
       setIsLoading(true);
       Promise.all([
-        movies.getFilteredMovies(filterString, isShortMovie),
+        movies._getMovies(),
+        //movies.getFilteredMovies(filterString, isShortMovie),
         savedMovies.getMovies(),
       ])
-        .then((movies, savedData) => {
+        .then(([movies, savedData]) => {
           setCardsToRender(
-            movies
+            movies.filter((movie) => movie.nameRU.includes(filterString))
             // movies.map((movie) => {
             //   const found = savedData.find(
             //     (element) => element.movieId === movie.movieId
@@ -62,10 +63,10 @@ function Movies() {
         <Preloader></Preloader>
       ) : !!errorResponce ? (
         <div>{errorResponce}</div>
-      ) : cardsToRender.lenght > 0 ? (
+      ) : cardsToRender.length > 0 ? (
         <MoviesCardList cardsToRender={cardsToRender}></MoviesCardList>
       ) : filterString.length > 0 ? (
-        <div className="movies__notfound-message">Ничего не найдено</div>
+        <div>Ничего не найдено</div>
       ) : (
         ""
       )}

@@ -103,7 +103,14 @@ function MoviesCardList({ cardsToRender }) {
       </div>
 
       {countToShow < cardsToRender.length ? (
-        <button className="movies__btn link">Ещё</button>
+        <button
+          className="movies__btn link"
+          onClick={() =>
+            setCountToShow(countToShow + movieCount.row * movieCount.next)
+          }
+        >
+          Ещё
+        </button>
       ) : (
         ""
       )}
