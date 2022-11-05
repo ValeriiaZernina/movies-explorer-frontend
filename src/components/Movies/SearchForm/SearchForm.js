@@ -1,8 +1,11 @@
 import "./SearchForm.css";
 import Checkbox from "../Checkbox/Checkbox";
-import { useState } from "react";
+// import { useState } from "react";
+import InfoTooltip from "../InfoTooltip/InfoTooltip";
+import { useInfoTooltip } from "../InfoTooltip/useInfoTooltip";
 
-function SearchForm() {
+function SearchForm(isShortMovie, onChangeIsShortMovie) {
+  const { statusInfoTooltip, closeInfoTooltip } = useInfoTooltip(() => {});
   function handleSubmit(e) {
     e.preventDefault();
   }
@@ -29,7 +32,13 @@ function SearchForm() {
       <Checkbox
         className="search-film__checkbox"
         name="Короткометражки"
+        onChange={onChangeIsShortMovie}
+        value={isShortMovie}
       ></Checkbox>
+      <InfoTooltip
+        status={statusInfoTooltip}
+        onClose={closeInfoTooltip}
+      ></InfoTooltip>
     </form>
   );
 }

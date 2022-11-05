@@ -21,6 +21,7 @@ function InputValidation({
             !!errorText && "input_error-value"
           }`}
           onInput={handleInput}
+          {...props}
         ></input>
       </label>
     </div>

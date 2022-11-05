@@ -1,14 +1,14 @@
 import React, { useContext } from "react";
-import { Outlet, Route, Navigate } from "react-router-dom";
+import { Outlet, Navigate } from "react-router-dom";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
 function ProtectedRoute() {
   const currentUser = useContext(CurrentUserContext);
 
-  return (
-    <Route>
-      {() => (currentUser.loggedIn ? <Outlet /> : <Navigate to="/" />)}
-    </Route>
+  return currentUser.loggedIn ? (
+    <Outlet></Outlet>
+  ) : (
+    <Navigate to="/"></Navigate>
   );
 }
 

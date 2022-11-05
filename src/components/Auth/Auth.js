@@ -100,10 +100,10 @@ function Auth({ formType, authStyle, errorText, onSubmit, ...props }) {
         ></InputValidation>
 
         <span
-          className={`auth__error iauth__error_style_${authStyle} ${
-            !!errorText && "input__error_visible"
-          }`}
           id={`${props.id}-error`}
+          className={`auth__error auth__error_style_${authStyle} ${
+            !!errorText && "auth__error_visible"
+          }`}
         >
           {errorText}
         </span>

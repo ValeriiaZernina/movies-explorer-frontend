@@ -30,9 +30,15 @@ function App() {
     if (loggedIn) {
       auth
         .getUserInfo()
-        .then((data) => {
+        .then((user) => {
           setCurrentUser((curr) => {
-            return { ...curr, loggedIn: true, ...data };
+            return {
+              ...curr,
+              loggedIn: true,
+              name: user.name,
+              email: user.email,
+              _id: user._id,
+            };
           });
         })
         .catch(() => {
@@ -48,7 +54,7 @@ function App() {
 
   // logout в случае, если любой запрос к серверу заканчивается ошибкой авторизации
   useEffect(() => {
-    if (location.pathname === "./signout") {
+    if (location.pathname === "/signout") {
       auth
         .logout()
         .catch((err) => alert(err))
@@ -68,17 +74,18 @@ function App() {
   }, [location]);
 
   // Обработка авторизации
-  function handleLogin(data) {
-    const { email, password } = data;
-    auth(email, password)
+  function handleLogin() {
+    localStorage.setItem("loggedIn", "yes");
+    setCurrentUser((curr) => {
+      return { ...curr, loggedIn: true };
+    });
+    navigate("/movies", { replace: true });
+    auth
+      .getUserInfo()
       .then((data) => {
-        if (data.message === "Athorization successful") {
-          localStorage.setItem("loggedIn", true);
-          navigate("/movies", { replace: true });
-          setCurrentUser((curr) => {
-            return { ...curr, loggedIn: true };
-          });
-        }
+        setCurrentUser((curr) => {
+          return { ...curr, name: data.name, email: data.email, _id: data._id };
+        });
       })
       .catch(() => {
         setCurrentUser((curr) => {
@@ -96,19 +103,19 @@ function App() {
 
   return (
     <div className="page">
-      <CurrentUserContext.Provider value={currentUser} r>
+      <CurrentUserContext.Provider value={currentUser}>
         <Routes>
           <Route
             path="/"
             element={
               <>
-                <Header></Header>
-                <Outlet></Outlet>
-                <Footer></Footer>
+                <Header />
+                <Outlet />
+                <Footer />
               </>
             }
           >
-            <Route element={<Main></Main>}></Route>
+            <Route index element={<Main></Main>}></Route>
             <Route element={<ProtectedRoute></ProtectedRoute>}>
               <Route
                 path="/movies"
@@ -139,19 +146,11 @@ function App() {
 
           <Route
             path="/signin"
-            element={
-              <>
-                <Auth formType="login" onSubmit={handleLogin}></Auth>
-              </>
-            }
+            element={<Auth formType="login" onSubmit={handleLogin}></Auth>}
           ></Route>
           <Route
             path="/signup"
-            element={
-              <>
-                <Auth formType="register" onSubmit={handleLogin}></Auth>
-              </>
-            }
+            element={<Auth formType="register" onSubmit={handleLogin}></Auth>}
           ></Route>
           <Route path="/signout" element={<></>}></Route>
           <Route path="*" element={<PageNotFound></PageNotFound>}></Route>

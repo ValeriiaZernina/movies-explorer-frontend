@@ -1,6 +1,6 @@
 export default class Api {
-  constructor(options) {
-    this._url = options.url;
+  constructor(url) {
+    this._url = url;
     this._headers = {
       "Content-Type": "application/json",
     };

@@ -22,9 +22,7 @@ function InfoTooltip({ status, onClose }) {
         src={status.isOk ? successReg : failReg}
       />
       <h2 className="info-tooltip__title">
-        {status.isOk
-          ? "Вы успешно зарегистрировались!"
-          : "Что-то пошло не так! Попробуйте ещё раз."}
+        {status.isOk ? "Успешно" : "Что-то пошло не так!"}
       </h2>
     </Popup>
   );

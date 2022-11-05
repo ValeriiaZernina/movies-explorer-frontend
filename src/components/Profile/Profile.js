@@ -8,12 +8,12 @@ import { useFormWithValidation } from "../InputValidation/useFormWithValidation"
 import { useInfoTooltip } from "../Movies/InfoTooltip/useInfoTooltip";
 import { auth } from "../../utils/Auth";
 
-function Profile(onEdit) {
+function Profile({ onChange }) {
   const currentUser = useContext(CurrentUserContext);
   const { values, handleInput, errors, isValid, resetForm } =
     useFormWithValidation();
   const onSubmit = () => {
-    onEdit(values.name, values.email);
+    onChange(values.name, values.email);
   };
   const { statusInfoTooltip, openInfoTooltip, closeInfoTooltip } =
     useInfoTooltip(onSubmit);
@@ -41,6 +41,7 @@ function Profile(onEdit) {
           minLength="2"
           maxLength="30"
           type="text"
+          label="Имя"
           pattern="[a-zA-Zа-яА-Я -]*"
           id="name"
           value={values.name || ""}
@@ -58,6 +59,14 @@ function Profile(onEdit) {
           errorText={errors.email}
           required
         ></InputValidation>
+
+        {/* <span
+          className={`profile__error ${
+            !!errorText && "profile__error_visible"
+          }`}
+        >
+          {errorText}
+        </span> */}
 
         <button
           className="profile__btn link"

@@ -12,7 +12,7 @@ function Movies() {
   const [errorResponce, setErrorResponce] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
-  useEffect(() => {
+  /*useEffect(() => {
     if (filterString.length > 0) {
       setIsLoading(true);
       Promise.all([
@@ -41,14 +41,14 @@ function Movies() {
         .finally(() => setIsLoading(false));
     }
   }, [filterString, isShortMovie]);
-
+*/
   return (
     <main className="movies">
       <SearchForm
         filterString={filterString}
         onChangeFilterString={setFilterString}
-        isShortMovie={isShortMovie}
-        onChangeIsShortMovie={setIsShortMovie}
+        //isShortMovie={isShortMovie}
+        //onChangeIsShortMovie={setIsShortMovie}
         isErrorOnEmpty={true}
       ></SearchForm>
       {isLoading ? (
