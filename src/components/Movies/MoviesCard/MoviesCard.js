@@ -1,5 +1,4 @@
 import "./MoviesCard.css";
-import movie from "../../../images/film.svg";
 import { useLocation } from "react-router-dom";
 import { convertMinutesToHours } from "../../../utils/constants";
 
@@ -22,12 +21,14 @@ function MoviesCard({ movie, onDeleteMovie, onSaveMovie }) {
           {convertMinutesToHours(movie.duration)}
         </div>
       </div>
-      <img
-        className="moviescard__pic"
-        src={movie.image}
-        alt={movie.nameRU}
-        // alt="В погоне за Бенкси"
-      ></img>
+      <a href={movie.trailerLink} target="_blank" rel="noopener noreferrer">
+        <img
+          className="moviescard__pic"
+          src={movie.image}
+          alt={movie.nameRU}
+        ></img>
+      </a>
+
       <button
         value="Сохранить"
         type="button"

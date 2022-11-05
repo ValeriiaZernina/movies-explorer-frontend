@@ -1,13 +1,28 @@
 import "./SearchForm.css";
 import Checkbox from "../Checkbox/Checkbox";
-// import { useState } from "react";
+import { useState } from "react";
 import InfoTooltip from "../InfoTooltip/InfoTooltip";
 import { useInfoTooltip } from "../InfoTooltip/useInfoTooltip";
 
-function SearchForm(isShortMovie, onChangeIsShortMovie) {
-  const { statusInfoTooltip, closeInfoTooltip } = useInfoTooltip(() => {});
+function SearchForm({
+  filterString,
+  isShortMovie,
+  onChangeIsShortMovie,
+  onChangeFilterString,
+  isErrorEmpty,
+}) {
+  const [inputValue, setInputValue] = useState(filterString);
+  const { statusInfoTooltip, openInfoTooltip, closeInfoTooltip } =
+    useInfoTooltip(() => {});
+
   function handleSubmit(e) {
     e.preventDefault();
+    if (inputValue.trim() === "" && isErrorEmpty) {
+      openInfoTooltip(false, "Нужно ввести ключевое слово");
+    } else {
+      setInputValue(inputValue.trim());
+      onChangeFilterString(inputValue.trim());
+    }
   }
 
   return (
@@ -19,6 +34,8 @@ function SearchForm(isShortMovie, onChangeIsShortMovie) {
           className="search-film__input"
           required
           placeholder="Фильм"
+          value={inputValue}
+          onInput={(e) => setInputValue(e.target.value)}
         ></input>
         <button
           aria-label="Найти"

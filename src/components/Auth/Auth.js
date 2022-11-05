@@ -99,15 +99,6 @@ function Auth({ formType, authStyle, errorText, onSubmit, ...props }) {
           errorText={errors.password}
         ></InputValidation>
 
-        <span
-          id={`${props.id}-error`}
-          className={`auth__error auth__error_style_${authStyle} ${
-            !!errorText && "auth__error_visible"
-          }`}
-        >
-          {errorText}
-        </span>
-
         <button className="auth__btn link" type="submit" disabled={!isValid}>
           {formType === "login" ? "Войти" : "Зарегистрироваться"}
         </button>

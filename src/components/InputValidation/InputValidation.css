@@ -63,3 +63,30 @@
   line-height: 13px;
   text-align: right;
 }
+
+.input__error {
+  visibility: hidden;
+  overflow: hidden;
+  color: #ee3465;
+  margin: 10px 0;
+}
+
+.input__error_style_auth {
+  font-weight: 400;
+  text-align: left;
+  font-size: 9px;
+  line-height: 12px;
+}
+
+.input__error_style_profile {
+  font-weight: 400;
+  text-align: right;
+  font-size: 9px;
+  line-height: 12px;
+}
+
+.input__error_visible {
+  visibility: visible;
+  margin-top: 20px;
+  font-size: 10px;
+}

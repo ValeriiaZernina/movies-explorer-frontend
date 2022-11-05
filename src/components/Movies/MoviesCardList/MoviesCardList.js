@@ -2,7 +2,7 @@ import "./MoviesCardList.css";
 import { useEffect, useState } from "react";
 import MoviesCard from "../MoviesCard/MoviesCard";
 import { getCountMovies } from "../../../utils/constants";
-import { savedMovies } from "../../../utils/MainApi";
+import { savedMovies } from "../../../utils/MainApi.js";
 import InfoTooltip from "../InfoTooltip/InfoTooltip";
 import { useInfoTooltip } from "../../Movies/InfoTooltip/useInfoTooltip";
 
@@ -34,13 +34,13 @@ function MoviesCardList({ cardsToRender }) {
     };
   }, []);
 
-  // useEffect(() => {
-  //   if (cardsToRender) {
-  //     setMoviesCards((curr) =>
-  //       cardsToRender.filter((element, index) => index < countToShow)
-  //     );
-  //   }
-  // }, [cardsToRender, countToShow]);
+  useEffect(() => {
+    if (cardsToRender) {
+      setMoviesCards((curr) =>
+        cardsToRender.filter((element, index) => index < countToShow)
+      );
+    }
+  }, [cardsToRender, countToShow]);
 
   function deleteMovie(movie) {
     savedMovies
@@ -114,4 +114,5 @@ function MoviesCardList({ cardsToRender }) {
     </>
   );
 }
+
 export default MoviesCardList;

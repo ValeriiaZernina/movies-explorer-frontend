@@ -7,7 +7,7 @@ class MainApi extends Api {
     this._savedMovies = undefined;
   }
 
-  _getMovies() {
+  getMovies() {
     return fetch(`${this._url}/movies`, {
       method: "GET",
       headers: this._headers,
@@ -29,6 +29,18 @@ class MainApi extends Api {
     return filteredMovies;
   }
 
+  _getFilteredMoviesFromSaved(filterString, isShortMovie) {
+    const filterRegExp = new RegExp(filterString, "i");
+    const result = this._savedMovies.filter((element, index) => {
+      return (
+        element.nameRU.search(filterRegExp) >= 0 ||
+        element.description.search(filterRegExp) >= 0
+      );
+    });
+
+    return this._getShortMovie(result, isShortMovie);
+  }
+
   saveMovie(movieData) {
     return fetch(`${this._url}/movies`, {
       method: "POST",
@@ -48,6 +60,30 @@ class MainApi extends Api {
       credentials: "include",
       headers: this._headers,
     }).then(this._checkResponseStatus);
+  }
+  // eslint-disable-next-line
+  _getFilteredMoviesFromSaved(filterString, isShortMovie) {
+    const filterRegExp = new RegExp(filterString, "i");
+    const result = this._savedMovies.filter((element, index) => {
+      return (
+        element.nameRU.search(filterRegExp) >= 0 ||
+        element.description.search(filterRegExp) >= 0
+      );
+    });
+
+    return this._getShortMovie(result, isShortMovie);
+  }
+
+  getFilteredMovies(filterString, isShortMovie) {
+    if (!this._savedMovies) {
+      return this._getMovies().then(() =>
+        this._getFilteredMoviesFromSaved(filterString, isShortMovie)
+      );
+    } else {
+      return Promise.resolve(
+        this._getFilteredMoviesFromSaved(filterString, isShortMovie)
+      );
+    }
   }
 
   logoff() {

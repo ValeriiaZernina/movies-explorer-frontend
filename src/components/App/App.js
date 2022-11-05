@@ -60,6 +60,8 @@ function App() {
         .catch((err) => alert(err))
         .finally(() => {
           localStorage.removeItem("loggedIn");
+          localStorage.removeItem("filteredMovies");
+          localStorage.removeItem("filterString");
           localStorage.removeItem("isShortMovie");
           savedMovies.logoff();
           setCurrentUser((curr) => {
@@ -73,11 +75,11 @@ function App() {
 
   // Обработка авторизации
   function handleLogin() {
-    localStorage.setItem("loggedIn", "yes");
+    localStorage.setItem("loggedIn", true);
     setCurrentUser((curr) => {
       return { ...curr, loggedIn: true };
     });
-    navigate("/movies", { replace: true });
+    navigate("/movies");
     auth
       .getUserInfo()
       .then((data) => {
@@ -116,7 +118,7 @@ function App() {
             <Route index element={<Main></Main>}></Route>
             <Route element={<ProtectedRoute></ProtectedRoute>}>
               <Route
-                path="/movies"
+                path="movies"
                 element={
                   <>
                     <Movies></Movies>
@@ -124,7 +126,7 @@ function App() {
                 }
               ></Route>
               <Route
-                path="/saved-movies"
+                path="saved-movies"
                 element={
                   <>
                     <SavedMovies></SavedMovies>
@@ -132,7 +134,7 @@ function App() {
                 }
               ></Route>
               <Route
-                path="/profile"
+                path="profile"
                 element={
                   <>
                     <Profile onChange={handleChangeProfile}></Profile>

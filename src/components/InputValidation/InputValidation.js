@@ -2,6 +2,7 @@ import "./InputValidation.css";
 
 function InputValidation({
   inputStyle,
+  authStyle,
   label,
   errorText,
   onInputEvent,
@@ -24,6 +25,15 @@ function InputValidation({
           {...props}
         ></input>
       </label>
+
+      <span
+        id={`${props.id}-error`}
+        className={`input__error input__error_style_${authStyle} ${
+          !!errorText && "input__error_visible"
+        }`}
+      >
+        {errorText}
+      </span>
     </div>
   );
 }
