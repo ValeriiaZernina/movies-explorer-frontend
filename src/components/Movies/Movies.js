@@ -10,10 +10,13 @@ function Movies() {
   const [filterString, setFilterString] = useState(
     localStorage.getItem("filterString") || ""
   );
+  const [cardsToRender, setCardsToRender] = useState(
+    localStorage.getItem("moviesResult") || []
+  );
   const [isShortMovie, setIsShortMovie] = useState(
     localStorage.getItem("isShortMovie") === "true"
   );
-  const [cardsToRender, setCardsToRender] = useState([]);
+
   const [errorResponce, setErrorResponce] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
@@ -26,8 +29,11 @@ function Movies() {
         savedMovies.getMovies(),
       ])
         .then(([movies, savedData]) => {
+          const filteredMovies = movies.filter((movie) =>
+            movie.nameRU.includes(filterString)
+          );
           setCardsToRender(
-            movies.filter((movie) => movie.nameRU.includes(filterString))
+            filteredMovies
             // movies.map((movie) => {
             //   const found = savedData.find(
             //     (element) => element.movieId === movie.movieId
@@ -40,6 +46,9 @@ function Movies() {
             // })
           );
           setErrorResponce("");
+          localStorage.setItem("filterString", filterString);
+          localStorage.setItem("isShortMovie", isShortMovie);
+          localStorage.setItem("moviesResult", filteredMovies);
         })
         .catch((err) =>
           setErrorResponce(

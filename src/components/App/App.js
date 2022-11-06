@@ -15,19 +15,20 @@ import SavedMovies from "../SavedMovies/SavedMovies";
 import Auth from "../Auth/Auth";
 import Profile from "../Profile/Profile";
 import PageNotFound from "../PageNotFound/PageNotFound";
-import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
+import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import { auth } from "../../utils/Auth";
 import { savedMovies } from "../../utils/MainApi";
 
 function App() {
-  const [currentUser, setCurrentUser] = useState({ loggedIn: false });
+  const [currentUser, setCurrentUser] = useState({
+    loggedIn: localStorage.getItem("loggedIn") || false,
+  });
   const navigate = useNavigate();
   const location = useLocation();
 
   useEffect(() => {
-    const loggedIn = localStorage.getItem("loggedIn");
-    if (loggedIn) {
+    if (localStorage.getItem("loggedIn")) {
       auth
         .getUserInfo()
         .then((user) => {
@@ -82,9 +83,9 @@ function App() {
     navigate("/movies");
     auth
       .getUserInfo()
-      .then((data) => {
+      .then((user) => {
         setCurrentUser((curr) => {
-          return { ...curr, name: data.name, email: data.email, _id: data._id };
+          return { ...curr, name: user.name, email: user.email, _id: user._id };
         });
       })
       .catch(() => {
@@ -152,7 +153,14 @@ function App() {
             path="/signup"
             element={<Auth formType="register" onSubmit={handleLogin}></Auth>}
           ></Route>
-          <Route path="/signout" element={<></>}></Route>
+          <Route
+            path="/signout"
+            element={
+              <>
+                <Main></Main>
+              </>
+            }
+          ></Route>
           <Route path="*" element={<PageNotFound></PageNotFound>}></Route>
         </Routes>
       </CurrentUserContext.Provider>
