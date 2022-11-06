@@ -10,11 +10,12 @@ function SavedMovies() {
   const [cardsToRender, setCardsToRender] = useState([]);
   const [errorResponce, seterrorResponce] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [isShortMovie, setIsShortMovie] = useState();
 
   useEffect(() => {
     setIsLoading(true);
     savedMovies
-      .getFilteredMovies(filterString)
+      .getFilteredMovies(filterString, isShortMovie)
       .then((savedData) => {
         setCardsToRender(savedData);
       })
@@ -24,13 +25,14 @@ function SavedMovies() {
         )
       )
       .finally(() => setIsLoading(false));
-  }, [filterString]);
+  }, [filterString, isShortMovie]);
 
   return (
     <main className="saved-movies">
       <SearchForm
         filterString={filterString}
         onChangeFilterString={setFilterString}
+        onChangeIsShortMovie={setIsShortMovie}
         isErrorOnEmpty={false}
       ></SearchForm>
       {isLoading ? (

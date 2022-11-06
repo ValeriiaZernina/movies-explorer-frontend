@@ -11,7 +11,7 @@ function Movies() {
     localStorage.getItem("filterString") || ""
   );
   const [cardsToRender, setCardsToRender] = useState(
-    localStorage.getItem("filteredMovies") || []
+    JSON.parse(localStorage.getItem("filteredMovies")) || []
   );
   const [isShortMovie, setIsShortMovie] = useState(
     localStorage.getItem("isShortMovie") === "true"
@@ -24,15 +24,10 @@ function Movies() {
     if (filterString.length > 0) {
       setIsLoading(true);
       Promise.all([
-        movies._getMovies(isShortMovie),
-        //movies.getFilteredMovies(filterString, isShortMovie),
+        movies.getFilteredMovies(filterString, isShortMovie),
         savedMovies.getMovies(),
       ])
-        .then(([movies, savedData]) => {
-          const filteredMovies = movies.filter((movie) =>
-            movie.nameRU.includes(filterString)
-          );
-
+        .then(([filteredMovies, savedData]) => {
           filteredMovies.forEach((element) => {
             const found = savedData.find((s) => s.movieId === element.movieId);
             if (found) {
@@ -45,7 +40,10 @@ function Movies() {
           setErrorResponce("");
           localStorage.setItem("filterString", filterString);
           localStorage.setItem("isShortMovie", isShortMovie);
-          localStorage.setItem("filteredMovies", filteredMovies);
+          localStorage.setItem(
+            "filteredMovies",
+            JSON.stringify(filteredMovies)
+          );
         })
         .catch((err) =>
           setErrorResponce(

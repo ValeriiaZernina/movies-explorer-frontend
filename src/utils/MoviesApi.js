@@ -56,28 +56,10 @@ class MoviesApi extends Api {
       );
     });
 
-    // сохраняем в localStorage
-    localStorage.setItem("filteredMovies", JSON.stringify(result));
-    localStorage.setItem("filterString", filterString);
-    localStorage.setItem("isShortMovie", isShortMovie);
-
     return this._getShortMovie(result, isShortMovie);
   }
 
   getFilteredMovies(filterString, isShortMovie) {
-    // проверяем локальное хранилище
-    if (localStorage.getItem("filterString") === filterString) {
-      if (localStorage.getItem("isShortMovie") !== isShortMovie + "") {
-        localStorage.setItem("isShortMovie", isShortMovie);
-      }
-      return Promise.resolve(
-        this._getShortMovie(
-          JSON.parse(localStorage.getItem("filteredMovies")),
-          isShortMovie
-        )
-      );
-    }
-
     if (this._savedMovies.length === 0) {
       return this._getMovies().then(() =>
         this._getFilteredMoviesFromSaved(filterString, isShortMovie)
