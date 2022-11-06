@@ -42,28 +42,6 @@ function MoviesCardList({ cardsToRender }) {
     }
   }, [cardsToRender, countToShow]);
 
-  function deleteMovie(movie) {
-    savedMovies
-      .deleteMovie(movie)
-      .then(() => {
-        if (movie._id) {
-          const found = cardsToRender.findIndex(
-            (element) => element._id === movie._id
-          );
-          if (found >= 0) {
-            cardsToRender.splice(found, 1);
-          }
-          setMoviesCards((curr) =>
-            curr.filter((element) => element._id !== movie._id)
-          );
-        } else {
-          delete movie.owner;
-          setMoviesCards((curr) => curr.map((element) => element));
-        }
-      })
-      .catch((err) => openInfoTooltip(false, err));
-  }
-
   useEffect(() => {
     setCountToShow(movieCount.row * movieCount.first);
   }, [movieCount]);
@@ -77,6 +55,7 @@ function MoviesCardList({ cardsToRender }) {
         );
         if (found) {
           found.owner = newMovie.owner;
+          found._id = newMovie._id;
         }
         setMoviesCards((curr) => {
           return curr.map((element) =>
@@ -88,6 +67,34 @@ function MoviesCardList({ cardsToRender }) {
       })
       .catch((err) => openInfoTooltip(false, err));
   }
+
+  function deleteMovie(movie) {
+    savedMovies
+      .deleteMovie(movie)
+      .then(() => {
+        if (movie._id) {
+          const id = movie._id;
+          const found = cardsToRender.find((element) => element._id === id);
+          if (found) {
+            delete found.owner;
+            delete found._id;
+          }
+
+          setMoviesCards((curr) => {
+            return curr.map((element) => {
+              if (element._id === id) {
+                delete element.owner;
+                delete element._id;
+                return element;
+              }
+              return element;
+            });
+          });
+        }
+      })
+      .catch((err) => openInfoTooltip(false, err));
+  }
+
   return (
     <>
       <div className="moviescard-list">

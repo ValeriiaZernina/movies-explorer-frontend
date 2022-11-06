@@ -64,7 +64,12 @@ class MainApi extends Api {
       method: "DELETE",
       credentials: "include",
       headers: this._headers,
-    }).then(this._checkResponseStatus);
+    })
+      .then(this._checkResponseStatus)
+      .then(() => {
+        const index = this._savedMovies.findIndex((item) => item._id === id);
+        this._savedMovies.splice(index, 1);
+      });
   }
   // eslint-disable-next-line
   _getFilteredMoviesFromSaved(filterString, isShortMovie) {
