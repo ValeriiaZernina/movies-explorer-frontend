@@ -6,4 +6,6 @@ diplom project - интерфейс на «Реакте»
 
 https://disk.yandex.ru/d/9lSQ5xIRpJODUg
 
-###ссылка на пул реквест
+### Ссылка на пул реквест
+
+https://github.com/ValeriiaZernina/movies-explorer-frontend/pull/2
