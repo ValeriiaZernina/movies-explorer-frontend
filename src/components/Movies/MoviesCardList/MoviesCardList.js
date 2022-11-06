@@ -6,7 +6,7 @@ import { savedMovies } from "../../../utils/MainApi.js";
 import InfoTooltip from "../InfoTooltip/InfoTooltip";
 import { useInfoTooltip } from "../../Movies/InfoTooltip/useInfoTooltip";
 
-function MoviesCardList({ cardsToRender }) {
+function MoviesCardList({ cardsToRender, isSavedCard }) {
   const [movieCount, setMovieCount] = useState(getCountMovies());
   const [moviesCards, setMoviesCards] = useState([]);
   const [countToShow, setCountToShow] = useState(
@@ -72,7 +72,17 @@ function MoviesCardList({ cardsToRender }) {
     savedMovies
       .deleteMovie(movie)
       .then(() => {
-        if (movie._id) {
+        if (isSavedCard) {
+          const found = cardsToRender.findIndex(
+            (element) => element._id === movie._id
+          );
+          if (found >= 0) {
+            cardsToRender.splice(found, 1);
+          }
+          setMoviesCards((curr) =>
+            curr.filter((element) => element.movieId !== movie.movieId)
+          );
+        } else {
           const id = movie._id;
           const found = cardsToRender.find((element) => element._id === id);
           if (found) {

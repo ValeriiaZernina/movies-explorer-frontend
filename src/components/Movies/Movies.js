@@ -70,7 +70,10 @@ function Movies() {
       ) : !!errorResponce ? (
         <div>{errorResponce}</div>
       ) : cardsToRender.length > 0 ? (
-        <MoviesCardList cardsToRender={cardsToRender}></MoviesCardList>
+        <MoviesCardList
+          cardsToRender={cardsToRender}
+          isSavedCard={false}
+        ></MoviesCardList>
       ) : filterString.length > 0 ? (
         <div>Ничего не найдено</div>
       ) : (

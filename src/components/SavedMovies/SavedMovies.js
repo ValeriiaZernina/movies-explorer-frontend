@@ -38,7 +38,10 @@ function SavedMovies() {
       ) : !!errorResponce ? (
         <div>{errorResponce}</div>
       ) : cardsToRender.length > 0 ? (
-        <MoviesCardList cardsToRender={cardsToRender}></MoviesCardList>
+        <MoviesCardList
+          cardsToRender={cardsToRender}
+          isSavedCard={true}
+        ></MoviesCardList>
       ) : filterString.length > 0 ? (
         <div>По результатам поиска фильмов не найдено</div>
       ) : (
