@@ -1,5 +1,6 @@
 import { useLocation } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import "./Header.css";
 import Logo from "../Logo/Logo";
 import MenuBtn from "./MenuBtn/MenuBtn";
@@ -12,6 +13,7 @@ function isWindowWide() {
 }
 
 function Header() {
+  const currentUser = useContext(CurrentUserContext);
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   const [isWide, setIsWide] = useState(isWindowWide());
   const location = useLocation();
@@ -52,7 +54,7 @@ function Header() {
       }`}
     >
       <Logo></Logo>
-      {location.pathname === "/" ? (
+      {!currentUser.loggedIn ? (
         <nav className="header__sign">
           <MenuLink to="/signup" linkType="signup" subtitle="Регистрация">
             Регистрация

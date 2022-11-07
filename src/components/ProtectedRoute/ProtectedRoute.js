@@ -8,7 +8,7 @@ function ProtectedRoute() {
   return currentUser.loggedIn ? (
     <Outlet></Outlet>
   ) : (
-    <Navigate to="/signin"></Navigate>
+    <Navigate to="/"></Navigate>
   );
 }
 

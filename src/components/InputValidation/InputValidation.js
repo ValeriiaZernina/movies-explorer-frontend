@@ -8,8 +8,8 @@ function InputValidation({
   onInputEvent,
   ...props
 }) {
-  function handleInput(e) {
-    onInputEvent(e);
+  function handleInput(event) {
+    onInputEvent(event);
   }
   return (
     <div className={`input__section input__section_style_${inputStyle}`}>
