@@ -16,6 +16,7 @@ import Auth from "../Auth/Auth";
 import Profile from "../Profile/Profile";
 import PageNotFound from "../PageNotFound/PageNotFound";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
+import OpenRoutes from "../OpenRoutes/OpenRoutes";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import { auth } from "../../utils/Auth";
 import { savedMovies } from "../../utils/MainApi";
@@ -145,14 +146,17 @@ function App() {
             </Route>
           </Route>
 
-          <Route
-            path="/signin"
-            element={<Auth formType="login" onSubmit={handleLogin}></Auth>}
-          ></Route>
-          <Route
-            path="/signup"
-            element={<Auth formType="register" onSubmit={handleLogin}></Auth>}
-          ></Route>
+          <Route element={<OpenRoutes></OpenRoutes>}>
+            <Route
+              path="/signin"
+              element={<Auth formType="login" onSubmit={handleLogin}></Auth>}
+            ></Route>
+            <Route
+              path="/signup"
+              element={<Auth formType="register" onSubmit={handleLogin}></Auth>}
+            ></Route>
+          </Route>
+
           <Route
             path="/signout"
             element={

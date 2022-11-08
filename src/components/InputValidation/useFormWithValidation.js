@@ -1,4 +1,5 @@
 import { useState, useCallback } from "react";
+import validator from "validator";
 
 //хук управления формой и валидации формы
 export function useFormWithValidation() {
@@ -13,6 +14,17 @@ export function useFormWithValidation() {
     if (name === "name" && event.target.validity.patternMismatch) {
       validationMessage =
         "Имя должно содержать только латиницу, кириллицу, пробел или дефис.";
+    }
+
+    if (name === "email") {
+      if (!validator.isEmail(value)) {
+        if (validationMessage === "") {
+          validationMessage = "Ошибка в E-mail";
+        }
+        event.target.setCustomValidity(validationMessage);
+      } else {
+        event.target.setCustomValidity("");
+      }
     }
 
     setValues({ ...values, [name]: value });

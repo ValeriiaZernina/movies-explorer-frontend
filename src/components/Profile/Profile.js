@@ -10,6 +10,7 @@ import { auth } from "../../utils/Auth";
 
 function Profile({ onChange }) {
   const currentUser = useContext(CurrentUserContext);
+
   const { values, handleInput, errors, isValid, resetForm } =
     useFormWithValidation();
   const onSubmit = () => {
@@ -57,7 +58,6 @@ function Profile({ onChange }) {
           id="email"
           value={values.email || ""}
           errorText={errors.email}
-          required
         ></InputValidation>
 
         {/* <span

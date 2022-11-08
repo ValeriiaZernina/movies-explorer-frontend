@@ -29,18 +29,6 @@ class MainApi extends Api {
     return filteredMovies;
   }
 
-  _getFilteredMoviesFromSaved(filterString, isShortMovie) {
-    const filterRegExp = new RegExp(filterString, "i");
-    const result = this._savedMovies.filter((element, index) => {
-      return (
-        element.nameRU.search(filterRegExp) >= 0 ||
-        element.description.search(filterRegExp) >= 0
-      );
-    });
-
-    return this._getShortMovie(result, isShortMovie);
-  }
-
   saveMovie(movie) {
     return fetch(`${this._url}/movies`, {
       method: "POST",
@@ -73,13 +61,9 @@ class MainApi extends Api {
   }
   // eslint-disable-next-line
   _getFilteredMoviesFromSaved(filterString, isShortMovie) {
-    const filterRegExp = new RegExp(filterString, "i");
-    const result = this._savedMovies.filter((element, index) => {
-      return (
-        element.nameRU.search(filterRegExp) >= 0 ||
-        element.description.search(filterRegExp) >= 0
-      );
-    });
+    const result = this._savedMovies.filter((item) =>
+      item.nameRU.toLowerCase().includes(filterString.toLowerCase())
+    );
 
     return this._getShortMovie(result, isShortMovie);
   }

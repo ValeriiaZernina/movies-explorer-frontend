@@ -9,7 +9,6 @@
 .search-film__container {
   display: flex;
   position: relative;
-
   margin-bottom: 42px;
 }
 
@@ -43,6 +42,11 @@
   line-height: 18px;
 }
 
+.search-film__btn_disabled {
+  background: rgba(248, 248, 248, 0.5);
+  opacity: 80%;
+}
+
 .search-film__btn:hover {
   cursor: pointer;
   opacity: 60%;
@@ -52,6 +56,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.search-film__span {
+  color: rgba(238, 52, 101, 1);
+  font-size: 11px;
+  margin: 10px auto 0;
+  text-align: center;
+  height: 18px;
+  visibility: hidden;
+}
+
+.search-film__span_active {
+  visibility: visible;
 }
 
 @media screen and (max-width: 420px) {

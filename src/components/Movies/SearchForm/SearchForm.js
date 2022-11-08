@@ -1,32 +1,37 @@
 import "./SearchForm.css";
 import Checkbox from "../Checkbox/Checkbox";
 import { useState } from "react";
-import InfoTooltip from "../InfoTooltip/InfoTooltip";
-import { useInfoTooltip } from "../InfoTooltip/useInfoTooltip";
 
 function SearchForm({
-  filterString,
-  onChangeFilterString,
+  keyWords = "",
   isShortMovie,
+  onChangeFilterString,
   onChangeIsShortMovie,
-  isErrorEmpty,
 }) {
-  const [inputValue, setInputValue] = useState(filterString);
-  const { statusInfoTooltip, openInfoTooltip, closeInfoTooltip } =
-    useInfoTooltip(() => {});
+  const [isSpanActive, setIsSpanActive] = useState(true);
+  const [text, setText] = useState(keyWords);
+  const [isActiveBtn, setIsActiveBnt] = useState(false);
 
   function handleSubmit(e) {
     e.preventDefault();
-    if (inputValue.trim() === "" && isErrorEmpty) {
-      openInfoTooltip(false, "Нужно ввести ключевое слово");
+    onChangeFilterString(text.trim());
+  }
+
+  function handleChange(e) {
+    const value = e.target.value;
+    setText(value);
+    if (value.trim().length !== 0) {
+      setIsSpanActive(true);
+
+      setIsActiveBnt(true);
     } else {
-      setInputValue(inputValue.trim());
-      onChangeFilterString(inputValue.trim());
+      setIsSpanActive(false);
+      setIsActiveBnt(false);
     }
   }
 
   return (
-    <form className="search-film" onSubmit={handleSubmit}>
+    <form className="search-film" onSubmit={handleSubmit} noValidate={true}>
       <div className="search-film__container">
         <input
           id="search"
@@ -34,28 +39,35 @@ function SearchForm({
           className="search-film__input"
           required
           placeholder="Фильм"
-          value={inputValue}
-          onInput={(e) => setInputValue(e.target.value)}
+          value={text}
+          onChange={handleChange}
         ></input>
+
         <button
           aria-label="Найти"
           type="submit"
-          className="search-film__btn"
+          className={`search-film__btn ${
+            !isActiveBtn ? "search-film__btn_disabled" : ""
+          }`}
           name="submit"
+          id="searchBtn"
         >
           Найти
         </button>
       </div>
+      <span
+        className={`search-film__span ${
+          !isSpanActive ? "search-film__span_active" : ""
+        }`}
+      >
+        Нужно ввести ключевое слово
+      </span>
       <Checkbox
         className="search-film__checkbox"
         name="Короткометражки"
         onChange={onChangeIsShortMovie}
         value={isShortMovie}
       ></Checkbox>
-      <InfoTooltip
-        status={statusInfoTooltip}
-        onClose={closeInfoTooltip}
-      ></InfoTooltip>
     </form>
   );
 }
