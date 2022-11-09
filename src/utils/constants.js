@@ -1,5 +1,5 @@
-// const URL = "http://localhost:4000";
-const URL = "https://api.zernina.nomoredomains.icu";
+const URL = "http://localhost:4000";
+// const URL = "https://api.zernina.nomoredomains.icu";
 const MOVIES_URL = "https://api.nomoreparties.co";
 const SHORT_DURATION = 40;
 
@@ -10,9 +10,9 @@ function getCountMovies() {
       width >= 1470
         ? Math.floor((width - 120) / 270)
         : width >= 1200
-        ? 4
-        : width >= 870
         ? 3
+        : width >= 870
+        ? 2
         : width >= 590
         ? 2
         : 1,

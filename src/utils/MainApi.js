@@ -1,10 +1,21 @@
 import Api from "./Api";
 import { URL, SHORT_DURATION } from "./constants";
+import { customHistory } from "../components/CustomBrowserRouter/CustomBrowserRouter";
 
 class MainApi extends Api {
   constructor(options) {
     super(options);
     this._savedMovies = undefined;
+  }
+
+  _checkResponseStatus(res) {
+    if (res.ok) {
+      return res.json();
+    }
+    if (res.status === 401) {
+      customHistory.push("/signout");
+    }
+    return Promise.reject(`Ошибка: ${res.status}`);
   }
 
   _getMovies() {

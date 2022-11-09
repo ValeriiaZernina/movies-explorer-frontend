@@ -9,7 +9,7 @@
 .search-film__container {
   display: flex;
   position: relative;
-  margin-bottom: 42px;
+  margin-bottom: 10px;
 }
 
 .search-film__input {
@@ -52,16 +52,10 @@
   opacity: 60%;
 }
 
-.search-film__checkbox {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .search-film__span {
   color: rgba(238, 52, 101, 1);
   font-size: 11px;
-  margin: 10px auto 0;
+  padding-left: 10px;
   text-align: center;
   height: 18px;
   visibility: hidden;
@@ -69,6 +63,13 @@
 
 .search-film__span_active {
   visibility: visible;
+}
+
+.search-film__checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 32px;
 }
 
 @media screen and (max-width: 420px) {

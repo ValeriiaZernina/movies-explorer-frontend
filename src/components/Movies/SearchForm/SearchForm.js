@@ -3,13 +3,13 @@ import Checkbox from "../Checkbox/Checkbox";
 import { useState } from "react";
 
 function SearchForm({
-  keyWords = "",
+  filterString,
   isShortMovie,
   onChangeFilterString,
   onChangeIsShortMovie,
 }) {
   const [isSpanActive, setIsSpanActive] = useState(true);
-  const [text, setText] = useState(keyWords);
+  const [text, setText] = useState(filterString);
   const [isActiveBtn, setIsActiveBnt] = useState(false);
 
   function handleSubmit(e) {
