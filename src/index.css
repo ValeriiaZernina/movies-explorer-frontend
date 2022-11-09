@@ -1,3 +1,7 @@
 @import url(./vendor/normalize.css);
 
 @import url(./vendor/fonts/fonts.css);
+
+@import url(./components/link/link.css);
+@import url(./components/link/_style/link_style_green.css);
+@import url(./components/link/_style/link_style_red.css);

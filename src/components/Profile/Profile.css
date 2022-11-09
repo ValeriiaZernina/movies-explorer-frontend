@@ -36,8 +36,22 @@
 }
 
 .profile__btn:hover {
-  cursor: pointer;
   opacity: 70%;
+}
+
+.profile__error {
+  visibility: hidden;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  margin: 0 0 6px;
+  color: rgba(238, 52, 101, 1);
+}
+
+.profile__error_visible {
+  visibility: visible;
 }
 
 .profile__signout {

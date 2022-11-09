@@ -1,10 +1,18 @@
 import "./Checkbox.css";
 
-function Checkbox({ name, className }) {
+function Checkbox({ onChange, name, className, value }) {
+  function handleChange(e) {
+    onChange(e.target.checked);
+  }
+
   return (
     <label className={`switch__label ${className}`}>
-      <input type="checkbox" />
-      <span className="switch__button" />
+      <input
+        type="checkbox"
+        defaultChecked={value}
+        onChange={handleChange}
+      ></input>
+      <span className="switch__button"></span>
       {name}
     </label>
   );
